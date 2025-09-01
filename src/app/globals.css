@@ -2,9 +2,16 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
+
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
+}
+
+@theme {
+  --font-dm-sans: var(--font-dm-sans);
+  --font-inter: var(--font-inter);
 }
 
 @theme inline {
