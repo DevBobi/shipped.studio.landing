@@ -43,8 +43,8 @@ export default function HeroSection() {
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
-            <div className="w-10 h-10 bg-gray-900 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">SS</span>
+            <div className="w-10 h-10 text-gray-900 rounded-lg flex items-center justify-center">
+              <span className="text-gray-900 font-bold text-2xl whitespace-nowrap">Shipped Studio</span>
             </div>
           </div>
           

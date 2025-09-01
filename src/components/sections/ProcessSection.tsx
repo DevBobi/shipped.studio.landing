@@ -1,3 +1,5 @@
+import { FaClock } from "react-icons/fa"
+import { LuClock4 } from "react-icons/lu";
 export default function ProcessSection() {
   const processSteps = [
     {
@@ -50,9 +52,9 @@ export default function ProcessSection() {
         </div>
 
         {/* Process Steps */}
-        <div className="space-y-6 md:space-y-8">
+        <div className="space-y-6 md:space-y-8 max-w-4xl mx-auto">
           {processSteps.map((step, index) => (
-            <div key={index} className="bg-gray-100 rounded-2xl p-4 md:p-6 lg:p-8 shadow-sm">
+            <div key={index} className="bg-gray-100 rounded-2xl p-4 md:p-6 lg:p-8 shadow-xs">
               <div className="flex flex-col md:flex-row items-start gap-4 md:gap-6 lg:gap-8">
                 {/* Illustration - Left Side */}
                 <div className="flex-shrink-0 mx-auto md:mx-0">
@@ -67,7 +69,7 @@ export default function ProcessSection() {
                     <div className="flex items-center gap-3 md:gap-4">
                       {/* Step Number - Before Heading */}
                       <div className="flex-shrink-0">
-                        <div className="w-10 h-10 md:w-12 md:h-12 bg-purple-500 rounded-full flex items-center justify-center text-white text-sm md:text-lg font-bold font-dm-sans">
+                        <div className=" rounded-full flex items-center justify-center text-gray-400 text-xl font-black font-dm-sans">
                           {step.number}
                         </div>
                       </div>
@@ -77,12 +79,12 @@ export default function ProcessSection() {
                     </div>
                     
                     {/* Time Duration - Right Side with Icon */}
-                    <div className="flex items-center gap-2 text-sm md:text-lg text-gray-600 font-inter font-medium">
-                      <span>🕐</span>
+                    <div className="flex items-center gap-2 text-sm md:text-lg text-gray-500 font-inter font-medium">
+                    <LuClock4 />
                       <span>{step.timeEstimate}</span>
                     </div>
                   </div>
-                  <p className="text-sm md:text-base lg:text-lg text-gray-700 font-inter leading-relaxed">
+                  <p className="text-sm max-w-2xl md:text-base lg:text-lg text-gray-600 font-inter leading-relaxed">
                     {step.description}
                   </p>
                 </div>

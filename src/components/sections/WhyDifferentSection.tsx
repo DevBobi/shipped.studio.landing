@@ -51,89 +51,76 @@ export default function WhyDifferentSection() {
         </div>
 
         {/* Comparison Table */}
-        <div className="bg-gray-800 rounded-3xl shadow-xl overflow-hidden border border-gray-100">
-          <div className="overflow-x-auto">
-            <table className="w-full">
-              <thead>
-                <tr className="bg-gray-700">
-                  <th className="px-8 py-6 text-left text-lg font-semibold text-white font-dm-sans border-b border-gray-600">
-                    Category
-                  </th>
-                  <th className="px-8 py-6 text-left text-lg font-semibold text-white font-dm-sans bg-gray-600 border-l-2 border-gray-500 border-b border-gray-600">
-                    Shipped.studio
-                  </th>
-                  <th className="px-8 py-6 text-left text-lg font-semibold text-white font-dm-sans border-b border-gray-600">
-                    Freelancer
-                  </th>
-                  <th className="px-8 py-6 text-left text-lg font-semibold text-white font-dm-sans border-b border-gray-600">
-                    Traditional Agency
-                  </th>
-                  <th className="px-8 py-6 text-left text-lg font-semibold text-white font-dm-sans border-b border-gray-600">
-                    In-House
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {comparisonData.map((row, index) => (
-                  <tr key={index} className="border-b border-gray-700">
-                    <td className="px-8 py-6 text-lg font-medium text-white font-inter">
-                      {row.category}
-                    </td>
-                    <td className="px-8 py-6 text-left bg-gray-700 border-l-2 border-gray-500">
-                      <div className="flex items-center gap-3">
-                        <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
-                          <FaCheck className="w-3 h-3 text-white" />
-                        </div>
-                        <span className="text-gray-200 font-inter font-medium">{row.shippedStudio.text}</span>
-                      </div>
-                    </td>
-                    <td className="px-8 py-6 text-left">
-                      <div className="flex items-center gap-3">
-                        {row.freelancer.has ? (
-                          <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
-                            <FaCheck className="w-3 h-3 text-white" />
-                          </div>
-                        ) : (
-                          <div className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0">
-                            <FaTimes className="w-3 h-3 text-white" />
-                          </div>
-                        )}
-                        <span className="text-gray-200 font-inter font-medium">{row.freelancer.text}</span>
-                      </div>
-                    </td>
-                    <td className="px-8 py-6 text-left">
-                      <div className="flex items-center gap-3">
-                        {row.traditionalAgency.has ? (
-                          <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
-                            <FaCheck className="w-3 h-3 text-white" />
-                          </div>
-                        ) : (
-                          <div className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0">
-                            <FaTimes className="w-3 h-3 text-white" />
-                          </div>
-                        )}
-                        <span className="text-gray-200 font-inter font-medium">{row.traditionalAgency.text}</span>
-                      </div>
-                    </td>
-                    <td className="px-8 py-6 text-left">
-                      <div className="flex items-center gap-3">
-                        {row.inHouse.has ? (
-                          <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
-                            <FaCheck className="w-3 h-3 text-white" />
-                          </div>
-                        ) : (
-                          <div className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0">
-                            <FaTimes className="w-3 h-3 text-white" />
-                          </div>
-                        )}
-                        <span className="text-gray-200 font-inter font-medium">{row.inHouse.text}</span>
-                      </div>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+        <div className="bg-gray-800 rounded-[48px] p-0 overflow-hidden max-w-6xl w-full mx-auto shadow-xl border border-gray-100">
+          {/* Header Row */}
+          <div className="grid grid-cols-5 bg-gray-800">
+            <div className="p-6 text-white font-medium font-dm-sans mt-2">Category</div>
+            <div className="bg-gray-300 p-6 mt-2 text-gray-900 font-bold text-center font-dm-sans rounded-t-[50px]">
+              Shipped Studio
+            </div>
+            <div className="p-6 text-white font-medium text-center font-dm-sans mt-2">Freelancer</div>
+            <div className="p-6 text-white font-medium text-center font-dm-sans mt-2">Traditional Agency</div>
+            <div className="p-6 text-white font-medium text-center font-dm-sans mt-2">In-House</div>
           </div>
+
+          {/* Content Rows */}
+          {comparisonData.map((row, index) => (
+            <div key={index} className="grid grid-cols-5 border-t border-gray-700">
+              <div className="p-6 text-white font-medium font-inter">
+                {row.category}
+              </div>
+              <div className={`bg-gray-300 p-6 flex items-center ${index === comparisonData.length - 1 ? 'rounded-b-[50px] mb-2' : ''}`}>
+                <div className="flex items-center gap-3 font-bold text-gray-900">
+                  <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
+                    <FaCheck className="w-3 h-3 text-white" />
+                  </div>
+                  <span className="font-inter font-medium">{row.shippedStudio.text}</span>
+                </div>
+              </div>
+              <div className={`p-6 flex items-center ${index === comparisonData.length - 1 ? 'rounded-b-[64px]' : ''}`}>
+                <div className="flex items-center gap-3 text-gray-200">
+                  {row.freelancer.has ? (
+                    <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
+                      <FaCheck className="w-3 h-3 text-white" />
+                    </div>
+                  ) : (
+                    <div className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0">
+                      <FaTimes className="w-3 h-3 text-white" />
+                    </div>
+                  )}
+                  <span className="font-inter font-medium">{row.freelancer.text}</span>
+                </div>
+              </div>
+              <div className={`p-6 flex items-center ${index === comparisonData.length - 1 ? 'rounded-b-[64px]' : ''}`}>
+                <div className="flex items-center gap-3 text-gray-200">
+                  {row.traditionalAgency.has ? (
+                    <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
+                      <FaCheck className="w-3 h-3 text-white" />
+                    </div>
+                  ) : (
+                    <div className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0">
+                      <FaTimes className="w-3 h-3 text-white" />
+                    </div>
+                  )}
+                  <span className="font-inter font-medium">{row.traditionalAgency.text}</span>
+                </div>
+              </div>
+              <div className={`p-6 flex items-center ${index === comparisonData.length - 1 ? 'rounded-b-[64px]' : ''}`}>
+                <div className="flex items-center gap-3 text-gray-200">
+                  {row.inHouse.has ? (
+                    <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
+                      <FaCheck className="w-3 h-3 text-white" />
+                    </div>
+                  ) : (
+                    <div className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0">
+                      <FaTimes className="w-3 h-3 text-white" />
+                    </div>
+                  )}
+                  <span className="font-inter font-medium">{row.inHouse.text}</span>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
