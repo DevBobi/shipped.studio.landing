@@ -27,7 +27,7 @@ export default function CTASection() {
             <p className="text-lg text-gray-700 font-inter mb-12 max-w-2xl mx-auto leading-relaxed">
               We&apos;d love to hear from you!
             </p>
-            <button className="bg-gray-800 text-white px-12 py-4 rounded-xl font-inter font-semibold text-lg hover:bg-gray-700 transition-all duration-300 hover:scale-105">
+            <button className="bg-gray-800 text-white px-12 py-4 rounded-full font-inter font-semibold text-lg hover:bg-gray-700 transition-all duration-300 hover:scale-105">
               Book a Call
             </button>
           </div>
