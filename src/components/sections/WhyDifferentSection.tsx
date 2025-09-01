@@ -1,0 +1,141 @@
+import { FaCheck, FaTimes } from 'react-icons/fa'
+
+export default function WhyDifferentSection() {
+  const comparisonData = [
+    {
+      category: 'Speed to market',
+      shippedStudio: { has: true, text: '21–60 days' },
+      freelancer: { has: true, text: 'Can be fast if available' },
+      traditionalAgency: { has: false, text: 'Typically 4–6 months' },
+      inHouse: { has: false, text: '3–4 months (capacity/hiring)' }
+    },
+    {
+      category: 'Pricing predictability',
+      shippedStudio: { has: true, text: 'Fixed fee' },
+      freelancer: { has: false, text: 'Variable & scope-creep risk' },
+      traditionalAgency: { has: true, text: 'Fixed (often high)' },
+      inHouse: { has: true, text: 'Salaries known (overhead)' }
+    },
+    {
+      category: 'PM effort required',
+      shippedStudio: { has: true, text: 'Dedicated PM' },
+      freelancer: { has: false, text: 'You manage' },
+      traditionalAgency: { has: true, text: 'Account manager' },
+      inHouse: { has: true, text: 'You manage directly' }
+    },
+    {
+      category: 'Technical breadth & scale',
+      shippedStudio: { has: true, text: 'MVP, SaaS & AI; elastic team' },
+      freelancer: { has: false, text: 'Solo bandwidth, narrow stack' },
+      traditionalAgency: { has: true, text: 'Multi-discipline bench' },
+      inHouse: { has: false, text: 'Limited without new hires' }
+    }
+  ]
+
+  return (
+    <section className="py-24 bg-gray-50 relative overflow-hidden">
+      {/* Noise Texture Overlay */}
+      <div className="absolute inset-0 opacity-40">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
+          backgroundSize: '200px 200px'
+        }}></div>
+      </div>
+      
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+        {/* Section Header */}
+        <div className="text-center mb-20">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 font-dm-sans mb-6">
+            Why we&apos;re different
+          </h2>
+        </div>
+
+        {/* Comparison Table */}
+        <div className="bg-gray-800 rounded-3xl shadow-xl overflow-hidden border border-gray-100">
+          <div className="overflow-x-auto">
+            <table className="w-full">
+              <thead>
+                <tr className="bg-gray-700">
+                  <th className="px-8 py-6 text-left text-lg font-semibold text-white font-dm-sans border-b border-gray-600">
+                    Category
+                  </th>
+                  <th className="px-8 py-6 text-left text-lg font-semibold text-white font-dm-sans bg-gray-600 border-l-2 border-gray-500 border-b border-gray-600">
+                    Shipped.studio
+                  </th>
+                  <th className="px-8 py-6 text-left text-lg font-semibold text-white font-dm-sans border-b border-gray-600">
+                    Freelancer
+                  </th>
+                  <th className="px-8 py-6 text-left text-lg font-semibold text-white font-dm-sans border-b border-gray-600">
+                    Traditional Agency
+                  </th>
+                  <th className="px-8 py-6 text-left text-lg font-semibold text-white font-dm-sans border-b border-gray-600">
+                    In-House
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {comparisonData.map((row, index) => (
+                  <tr key={index} className="border-b border-gray-700">
+                    <td className="px-8 py-6 text-lg font-medium text-white font-inter">
+                      {row.category}
+                    </td>
+                    <td className="px-8 py-6 text-left bg-gray-700 border-l-2 border-gray-500">
+                      <div className="flex items-center gap-3">
+                        <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
+                          <FaCheck className="w-3 h-3 text-white" />
+                        </div>
+                        <span className="text-gray-200 font-inter font-medium">{row.shippedStudio.text}</span>
+                      </div>
+                    </td>
+                    <td className="px-8 py-6 text-left">
+                      <div className="flex items-center gap-3">
+                        {row.freelancer.has ? (
+                          <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
+                            <FaCheck className="w-3 h-3 text-white" />
+                          </div>
+                        ) : (
+                          <div className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0">
+                            <FaTimes className="w-3 h-3 text-white" />
+                          </div>
+                        )}
+                        <span className="text-gray-200 font-inter font-medium">{row.freelancer.text}</span>
+                      </div>
+                    </td>
+                    <td className="px-8 py-6 text-left">
+                      <div className="flex items-center gap-3">
+                        {row.traditionalAgency.has ? (
+                          <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
+                            <FaCheck className="w-3 h-3 text-white" />
+                          </div>
+                        ) : (
+                          <div className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0">
+                            <FaTimes className="w-3 h-3 text-white" />
+                          </div>
+                        )}
+                        <span className="text-gray-200 font-inter font-medium">{row.traditionalAgency.text}</span>
+                      </div>
+                    </td>
+                    <td className="px-8 py-6 text-left">
+                      <div className="flex items-center gap-3">
+                        {row.inHouse.has ? (
+                          <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
+                            <FaCheck className="w-3 h-3 text-white" />
+                          </div>
+                        ) : (
+                          <div className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0">
+                            <FaTimes className="w-3 h-3 text-white" />
+                          </div>
+                        )}
+                        <span className="text-gray-200 font-inter font-medium">{row.inHouse.text}</span>
+                      </div>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
