@@ -33,8 +33,8 @@ export default function TeamSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-12 sm:mb-16 md:mb-20">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 font-dm-sans mb-4 sm:mb-6 leading-tight">
-            Our Tremendous Team
+        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 font-dm-sans mb-6">
+            Our Team
           </h2>
         </div>
 

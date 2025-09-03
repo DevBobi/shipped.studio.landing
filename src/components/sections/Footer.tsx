@@ -19,7 +19,7 @@ export default function Footer() {
       
       <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center relative z-10">
         {/* Company Title */}
-        <h3 className="text-4xl font-bold text-gray-900 font-dm-sans mb-6">
+        <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 font-dm-sans mb-6">
           Shipped Studio
         </h3>
         

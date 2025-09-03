@@ -29,7 +29,7 @@ export default function BuiltToBuildSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-12 sm:mb-16 md:mb-20">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 font-dm-sans mb-4 sm:mb-6 leading-tight">
+        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 font-dm-sans mb-6">
             Built to build just about any idea
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-600 font-inter max-w-2xl sm:max-w-3xl mx-auto leading-relaxed">
@@ -44,7 +44,7 @@ export default function BuiltToBuildSection() {
             {leftColumnItems.map((item, index) => (
               <div key={index} className="flex items-center gap-2 sm:gap-3 md:gap-4 py-2 sm:py-3 md:py-4 border-b border-gray-200">
                 <item.icon className={item.className} />
-                <span className="text-sm sm:text-base md:text-lg text-gray-700 font-inter">{item.title}</span>
+                <span className="text-base sm:text-lg md:text-xl text-gray-700 font-inter">{item.title}</span>
               </div>
             ))}
           </div>
@@ -54,11 +54,11 @@ export default function BuiltToBuildSection() {
             {rightColumnItems.map((item, index) => (
               <div key={index} className="flex items-center gap-2 sm:gap-3 md:gap-4 py-2 sm:py-3 md:py-4 border-b border-gray-200">
                 <item.icon className={item.className} />
-                <span className="text-sm sm:text-base md:text-lg text-gray-700 font-inter">{item.title}</span>
+                <span className="text-base sm:text-lg md:text-xl text-gray-700 font-inter">{item.title}</span>
               </div>
             ))}
             <div className="py-2 sm:py-3 md:py-4">
-              <span className="text-sm sm:text-base md:text-lg text-gray-700 font-inter">and so much more...</span>
+              <span className="text-base sm:text-lg md:text-xl text-gray-700 font-inter">and so much more...</span>
             </div>
           </div>
         </div>
@@ -66,19 +66,19 @@ export default function BuiltToBuildSection() {
         {/* Bottom Section */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4 md:gap-6 lg:gap-8">
           {/* Profile Section */}
-          <div className="flex items-center gap-2 sm:gap-3 md:gap-4">
+          <div className="flex items-center gap-4">
             <div className="relative">
-              {/* Profile Image Circle */}
-              <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 rounded-full border-2 border-purple-500 overflow-hidden">
+              {/* Profile Image Circle - Fixed Mobile Size */}
+              <div className="w-16 h-16 rounded-full border-4 border-purple-500 overflow-hidden">
                 <img 
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face" 
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face" 
                   alt="Profile" 
                   className="w-full h-full object-cover"
                 />
               </div>
-              {/* "You" Circle - Overlapping */}
-              <div className="absolute -right-4 sm:-right-6 md:-right-8 lg:-right-10 -bottom-0 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 bg-white rounded-full border-2 border-purple-500 flex items-center justify-center">
-                <span className="text-xs sm:text-sm font-inter text-purple-600 font-semibold transform -rotate-12">
+              {/* "You" Circle - Overlapping and Same Size, Fixed Mobile Size */}
+              <div className="absolute -right-10 -bottom-0 w-16 h-16 bg-white rounded-full border-4 border-purple-500 flex items-center justify-center">
+                <span className="text-base font-inter text-purple-600 font-semibold transform -rotate-12">
                   You
                 </span>
               </div>
@@ -86,7 +86,7 @@ export default function BuiltToBuildSection() {
           </div>
 
           {/* Book a Call Button */}
-          <button className="w-32 sm:w-auto bg-gray-800 rounded-full text-white px-4 sm:px-5 md:px-6 lg:px-8 py-3 sm:py-2 md:py-2.5 lg:py-3 font-inter font-semibold hover:bg-gray-700 transition-colors duration-300 shadow-lg hover:shadow-2xl cursor-pointer text-xs sm:text-sm md:text-base">
+          <button className="w-full sm:w-auto bg-gray-800 rounded-full text-white px-6 sm:px-6 md:px-8 lg:px-10 py-4 sm:py-3 md:py-4 lg:py-5 font-inter font-semibold hover:bg-gray-700 transition-colors duration-300 shadow-lg hover:shadow-2xl cursor-pointer text-base sm:text-lg md:text-xl">
             Book a call
           </button>
         </div>

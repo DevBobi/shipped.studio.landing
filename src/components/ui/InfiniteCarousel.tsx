@@ -100,7 +100,7 @@ export default function OptimizedInfiniteCarousel() {
         alt={`${image.title} - ${image.subtitle}`}
         loading="lazy"
         decoding="async"
-        className="h-32 w-auto sm:h-36 md:h-40 lg:h-48 xl:h-56 object-contain opacity-80 group-hover:opacity-100 transition-all duration-300 shadow-lg hover:shadow-xl rounded-lg"
+        className="h-64 w-auto sm:h-72 md:h-80 lg:h-96 xl:h-[28rem] object-contain opacity-80 group-hover:opacity-100 transition-all duration-300 shadow-lg hover:shadow-xl rounded-lg"
         style={{
           filter: 'drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1)) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.06))',
           willChange: 'transform, opacity'
@@ -112,10 +112,10 @@ export default function OptimizedInfiniteCarousel() {
           backgroundColor: 'rgba(0, 0, 0, 0.5)'
         }}
       >
-        <h3 className="text-white text-sm sm:text-base md:text-lg font-bold text-center mb-1 px-2 drop-shadow-lg">
+        <h3 className="text-white text-lg sm:text-xl md:text-2xl font-bold text-center mb-2 px-3 drop-shadow-lg">
           {image.title}
         </h3>
-        <p className="text-white text-xs sm:text-sm font-medium text-center px-2 drop-shadow-lg">
+        <p className="text-white text-base sm:text-lg font-medium text-center px-3 drop-shadow-lg">
           {image.subtitle}
         </p>
       </div>
@@ -123,7 +123,7 @@ export default function OptimizedInfiniteCarousel() {
   ), [])
 
   return (
-    <div className="w-full bg-white py-8 sm:py-12 md:py-16 overflow-hidden">
+          <div className="w-full bg-white py-12 sm:py-16 md:py-20 lg:py-24 overflow-hidden">
       {/* First Row - Moves Right */}
       <div className="mb-8 sm:mb-10 md:mb-12">
         <div 

@@ -50,7 +50,7 @@ export default function PricingSection() {
           <div className="text-xs sm:text-sm font-semibold text-purple-600 uppercase tracking-wider mb-3 sm:mb-4">
             Simple Pricing
           </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 font-dm-sans mb-4 sm:mb-6 leading-tight px-2">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 font-dm-sans mb-6">
             Simple packages, no surprises.
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-600 font-inter max-w-3xl mx-auto leading-relaxed px-4">

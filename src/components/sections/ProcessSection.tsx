@@ -44,7 +44,7 @@ export default function ProcessSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-12 sm:mb-16 md:mb-20">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 font-dm-sans mb-4 sm:mb-6 leading-tight px-4">
+        <h2 className="text-2xl md:text-5xl sm:text-3xl font-bold text-gray-900 font-dm-sans mb-6">
             We don&apos;t follow a fixed template. Our process{' '}
             <span className="text-purple-500">adapts</span> with every product, client, and challenge.
           </h2>
@@ -53,7 +53,7 @@ export default function ProcessSection() {
         {/* Process Steps */}
         <div className="space-y-6 md:space-y-8 max-w-4xl mx-auto">
           {processSteps.map((step, index) => (
-            <div key={index} className="bg-gray-100 rounded-2xl p-4 md:p-6 lg:p-8 shadow-xs">
+            <div key={index} className="bg-white rounded-2xl p-4 md:p-6 lg:p-8 shadow-xs">
               <div className="flex flex-col md:flex-row items-start gap-4 md:gap-6 lg:gap-8">
                 {/* Illustration - Left Side */}
                 <div className="flex-shrink-0 mx-auto md:mx-0">

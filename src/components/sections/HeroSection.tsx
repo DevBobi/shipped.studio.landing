@@ -1,6 +1,7 @@
 'use client'
 
-import { FaArrowRight } from 'react-icons/fa'
+import { FaArrowRight, FaPlay } from 'react-icons/fa'
+import MobileNav from '@/components/ui/MobileNav'
 import InfiniteCarousel from '@/components/ui/InfiniteCarousel'
 
 export default function HeroSection() {
@@ -25,8 +26,8 @@ export default function HeroSection() {
         }}></div>
       </div>
       
-      {/* Hero Background Image - Only covers hero content area */}
-      <div className="absolute top-0 left-0 right-0 h-[750px] sm:h-[800px] md:h-[850px] lg:h-[900px] overflow-hidden">
+      {/* Hero Background Image - Full height on mobile, fixed height on larger screens */}
+      <div className="absolute top-0 left-0 right-0 h-screen sm:h-[800px] md:h-[850px] lg:h-[900px] overflow-hidden">
         <img 
           src="/hero bg.png" 
           alt="Hero background" 
@@ -34,19 +35,19 @@ export default function HeroSection() {
         />
       </div>
       
-      {/* Light Overlay to maintain readability - Only covers hero content area */}
-      <div className="absolute top-0 left-0 right-0 h-[750px] sm:h-[800px] md:h-[850px] lg:h-[900px] bg-white/40"></div>
+      {/* Light Overlay to maintain readability - Full height on mobile, fixed height on larger screens */}
+      <div className="absolute top-0 left-0 right-0 h-screen sm:h-[800px] md:h-[850px] lg:h-[900px] bg-white/40"></div>
       
-      {/* Noise/Texture Overlay - Only covers hero content area */}
-      <div className="absolute top-0 left-0 right-0 h-[750px] sm:h-[800px] md:h-[850px] lg:h-[900px] opacity-20">
+      {/* Noise/Texture Overlay - Full height on mobile, fixed height on larger screens */}
+      <div className="absolute top-0 left-0 right-0 h-screen sm:h-[800px] md:h-[850px] lg:h-[900px] opacity-20">
         <div className="absolute inset-0" style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
           backgroundSize: '200px 200px'
         }}></div>
       </div>
       
-      {/* Subtle Gradient Overlay - Only covers hero content area */}
-      <div className="absolute top-0 left-0 right-0 h-[750px] sm:h-[800px] md:h-[850px] lg:h-[900px] bg-gradient-to-br from-pink-50/20 via-purple-50/15 to-blue-50/20"></div>
+      {/* Subtle Gradient Overlay - Full height on mobile, fixed height on larger screens */}
+      <div className="absolute top-0 left-0 right-0 h-screen sm:h-[800px] md:h-[850px] lg:h-[900px] bg-gradient-to-br from-pink-50/20 via-purple-50/15 to-blue-50/20"></div>
       
       {/* Navigation */}
       <nav className="relative z-10 px-4 sm:px-6 py-4 sm:py-6 lg:px-8">
@@ -195,13 +196,13 @@ export default function HeroSection() {
       </div>
 
       {/* Hero Content */}
-      <div className="relative z-10 px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 md:pt-24 pb-12 sm:pb-16 md:pb-20">
+      <div className="relative z-10 px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 md:pt-24 pb-12 sm:pb-16 md:pb-20 min-h-screen sm:min-h-0 flex items-center">
         <div className="max-w-7xl mx-auto text-center">
           {/* Main Heading */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold font-dm-sans leading-tight mb-6 sm:mb-8 px-2 sm:px-0">
+          <h1 className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold font-dm-sans leading-tight mb-6 sm:mb-8 px-2 sm:px-0">
             <span className="text-gray-900">Your Idea, Designed And</span><br />
             <span className="text-gray-900">Built In Just</span>{' '}
-            <span className="text-white bg-gray-900 px-2 sm:px-4 py-1 sm:py-2 rounded-lg text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">21 Days.</span>
+            <span className="text-white bg-gray-900 px-2 sm:px-4 py-1 sm:py-2 rounded-lg text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">21 Days.</span>
           </h1>
           
           {/* Subheading */}
@@ -237,7 +238,7 @@ export default function HeroSection() {
         </div>
       </div>
       
-      {/* Three Row Carousel */}
+
       <InfiniteCarousel />
     </section>
   )
