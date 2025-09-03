@@ -32,7 +32,7 @@ export default function FAQSection() {
   ]
 
   return (
-    <section className="py-24 bg-gray-50 relative overflow-hidden">
+    <section id="faq-section" className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gray-50 relative overflow-hidden">
       {/* Noise Texture Overlay */}
       <div className="absolute inset-0 opacity-40">
         <div className="absolute inset-0" style={{
@@ -41,32 +41,32 @@ export default function FAQSection() {
         }}></div>
       </div>
       
-      <div className="max-w-4xl mx-auto px-6 lg:px-8 relative z-10">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 font-dm-sans mb-6">
+        <div className="text-center mb-12 sm:mb-16 md:mb-20">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 font-dm-sans mb-4 sm:mb-6 leading-tight">
             Frequently Asked Questions
           </h2>
-          <p className="text-xl text-gray-600 font-inter max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 font-inter max-w-3xl mx-auto leading-relaxed px-2 sm:px-0">
             Got questions? We&apos;ve got answers. Here are the most common questions we receive about our services and process.
           </p>
         </div>
 
         {/* FAQ Accordion */}
-        <div className="space-y-6">
+        <div className="space-y-4 sm:space-y-6">
           {faqs.map((faq, index) => (
             <Disclosure key={index}>
               {({ open }) => (
-                <div className="bg-gray-100 rounded-2xl shadow-xs overflow-hidden border border-gray-200">
-                  <Disclosure.Button className="w-full px-10 py-8 text-left flex items-center justify-between hover:bg-gray-50 transition-colors">
-                    <span className="text-xl font-medium text-gray-900 font-dm-sans pr-4">
+                <div className="bg-gray-100 rounded-xl sm:rounded-2xl shadow-xs overflow-hidden border border-gray-200">
+                  <Disclosure.Button className="w-full px-4 sm:px-6 md:px-8 lg:px-10 py-4 sm:py-6 md:py-8 text-left flex items-center justify-between hover:bg-gray-50 transition-colors">
+                    <span className="text-sm sm:text-base md:text-lg lg:text-xl font-medium text-gray-900 font-dm-sans pr-2 sm:pr-4 leading-tight">
                       {faq.question}
                     </span>
-                    <div className="flex-shrink-0 ml-4">
+                    <div className="flex-shrink-0 ml-2 sm:ml-4">
                       {open ? (
-                        <FaMinus className="w-6 h-6 text-purple-500" />
+                        <FaMinus className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-purple-500" />
                       ) : (
-                        <FaPlus className="w-6 h-6 text-purple-500" />
+                        <FaPlus className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-purple-500" />
                       )}
                     </div>
                   </Disclosure.Button>
@@ -79,8 +79,8 @@ export default function FAQSection() {
                     leaveFrom="transform scale-100 opacity-100"
                     leaveTo="transform scale-95 opacity-0"
                   >
-                    <Disclosure.Panel className="px-10 pb-8">
-                      <p className="text-gray-600 font-inter leading-relaxed text-lg">
+                    <Disclosure.Panel className="px-4 sm:px-6 md:px-8 lg:px-10 pb-4 sm:pb-6 md:pb-8">
+                      <p className="text-sm sm:text-base md:text-lg text-gray-600 font-inter leading-relaxed">
                         {faq.answer}
                       </p>
                     </Disclosure.Panel>

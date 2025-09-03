@@ -1,7 +1,7 @@
 export default function Footer() {
   const navigationLinks = [
     { name: 'MVP Calculator', href: '#mvp-calculator' },
-    { name: 'Why AstroMVP', href: '#why-astromvp' },
+    { name: 'Why Shipped Studio', href: '#why-shipped-studio' },
     { name: 'Services', href: '#services' },
     { name: 'Pricing', href: '#pricing' },
     { name: 'FAQ', href: '#faq' }

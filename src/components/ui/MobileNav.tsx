@@ -22,27 +22,54 @@ export default function MobileNav() {
         {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
       </button>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu Overlay */}
       {isOpen && (
-        <div className="absolute top-full left-0 right-0 bg-white shadow-lg border-t border-gray-200 z-50">
-          <div className="px-6 py-4 space-y-4">
-            {navigationLinks.map((link, index) => (
-              <a
-                key={index}
-                href={link.href}
-                className="block text-gray-700 hover:text-gray-900 font-inter transition-colors py-2"
-                onClick={() => setIsOpen(false)}
-              >
-                {link.name}
-              </a>
-            ))}
-            <div className="pt-4 border-t border-gray-200">
-              <button className="w-full bg-gray-900 text-white px-6 py-3 rounded-full font-inter font-medium hover:bg-gray-800 transition-colors">
-                Book a Strategy Call
-              </button>
+        <>
+          {/* Full Screen Backdrop */}
+          <div 
+            className="fixed inset-0 bg-black/50 z-[9998]"
+            onClick={() => setIsOpen(false)}
+          />
+          
+          {/* Mobile Menu */}
+          <div className="fixed inset-0 z-[9999] bg-white">
+            <div className="flex flex-col h-full">
+              {/* Header with close button */}
+              <div className="flex items-center justify-between px-6 py-4 border-b border-gray-200">
+                <div className="w-8 h-8 text-gray-900 rounded-lg flex items-center justify-center">
+                  <span className="text-gray-900 font-bold text-xl">S</span>
+                </div>
+                <button
+                  onClick={() => setIsOpen(false)}
+                  className="text-gray-700 hover:text-gray-900 transition-colors"
+                >
+                  <FaTimes size={24} />
+                </button>
+              </div>
+              
+              {/* Navigation Links */}
+              <div className="flex-1 px-6 py-8 space-y-6">
+                {navigationLinks.map((link, index) => (
+                  <a
+                    key={index}
+                    href={link.href}
+                    className="block text-gray-700 hover:text-gray-900 font-inter text-lg font-medium transition-colors py-3"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {link.name}
+                  </a>
+                ))}
+              </div>
+              
+              {/* CTA Button */}
+              <div className="px-6 py-6 border-t border-gray-200">
+                <button className="w-full bg-gray-900 text-white px-6 py-4 rounded-full font-inter font-semibold text-lg hover:bg-gray-800 transition-colors">
+                  Book a Strategy Call
+                </button>
+              </div>
             </div>
           </div>
-        </div>
+        </>
       )}
     </div>
   )

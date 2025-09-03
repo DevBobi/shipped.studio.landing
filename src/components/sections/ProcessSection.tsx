@@ -1,4 +1,3 @@
-import { FaClock } from "react-icons/fa"
 import { LuClock4 } from "react-icons/lu";
 export default function ProcessSection() {
   const processSteps = [
@@ -33,7 +32,7 @@ export default function ProcessSection() {
   ]
 
   return (
-    <section className="py-24 bg-gray-50 relative overflow-hidden">
+    <section id="process-section" className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gray-50 relative overflow-hidden">
       {/* Noise Texture Overlay */}
       <div className="absolute inset-0 opacity-40">
         <div className="absolute inset-0" style={{
@@ -42,10 +41,10 @@ export default function ProcessSection() {
         }}></div>
       </div>
       
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-12 md:mb-20">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 font-dm-sans mb-4 md:mb-6 leading-tight px-4">
+        <div className="text-center mb-12 sm:mb-16 md:mb-20">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 font-dm-sans mb-4 sm:mb-6 leading-tight px-4">
             We don&apos;t follow a fixed template. Our process{' '}
             <span className="text-purple-500">adapts</span> with every product, client, and challenge.
           </h2>

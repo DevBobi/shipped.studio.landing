@@ -1,4 +1,5 @@
 import { FaCheck, FaTimes } from 'react-icons/fa'
+import { ScrollArea } from '@/components/ui/scroll-area'
 
 export default function WhyDifferentSection() {
   const comparisonData = [
@@ -33,7 +34,7 @@ export default function WhyDifferentSection() {
   ]
 
   return (
-    <section className="py-24 bg-gray-50 relative overflow-hidden">
+    <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gray-50 relative overflow-hidden">
       {/* Noise Texture Overlay */}
       <div className="absolute inset-0 opacity-40">
         <div className="absolute inset-0" style={{
@@ -42,10 +43,10 @@ export default function WhyDifferentSection() {
         }}></div>
       </div>
       
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 font-dm-sans mb-6">
+        <div className="text-center mb-12 sm:mb-16 md:mb-20">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 font-dm-sans mb-4 sm:mb-6 leading-tight">
             Why we&apos;re different
           </h2>
         </div>
@@ -126,14 +127,15 @@ export default function WhyDifferentSection() {
           </div>
 
           {/* Mobile Table */}
-          <div className="md:hidden overflow-x-auto">
-            <div className="min-w-[800px]">
+          <div className="md:hidden">
+            <ScrollArea className="w-full">
+              <div className="min-w-[800px]">
               {/* Header Row */}
               <div className="grid grid-cols-5 bg-gray-800">
                 <div className="p-4 text-white font-medium font-dm-sans mt-2 text-sm">Category</div>
-                <div className="bg-gray-300 p-4 mt-2 text-gray-900 font-bold text-center font-dm-sans rounded-t-[50px] text-sm">
-                  Shipped Studio
-                </div>
+                              <div className="bg-gray-300 p-4 mt-2 text-gray-900 font-bold text-center font-dm-sans rounded-t-[24px] text-sm">
+                Shipped Studio
+              </div>
                 <div className="p-4 text-white font-medium text-center font-dm-sans mt-2 text-sm">Freelancer</div>
                 <div className="p-4 text-white font-medium text-center font-dm-sans mt-2 text-sm">Traditional Agency</div>
                 <div className="p-4 text-white font-medium text-center font-dm-sans mt-2 text-sm">In-House</div>
@@ -145,7 +147,7 @@ export default function WhyDifferentSection() {
                   <div className="p-4 text-white font-medium font-inter text-sm">
                     {row.category}
                   </div>
-                  <div className={`bg-gray-300 p-4 flex items-center ${index === comparisonData.length - 1 ? 'rounded-b-[50px] mb-2' : ''}`}>
+                  <div className={`bg-gray-300 p-4 flex items-center ${index === comparisonData.length - 1 ? 'rounded-b-[24px] mb-2' : ''}`}>
                     <div className="flex items-center gap-2 font-bold text-gray-900">
                       <div className="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
                         <FaCheck className="w-2.5 h-2.5 text-white" />
@@ -153,7 +155,7 @@ export default function WhyDifferentSection() {
                       <span className="font-inter font-medium text-sm">{row.shippedStudio.text}</span>
                     </div>
                   </div>
-                  <div className={`p-4 flex items-center ${index === comparisonData.length - 1 ? 'rounded-b-[64px]' : ''}`}>
+                  <div className={`p-4 flex items-center ${index === comparisonData.length - 1 ? 'rounded-b-[32px]' : ''}`}>
                     <div className="flex items-center gap-2 text-gray-200">
                       {row.freelancer.has ? (
                         <div className="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
@@ -167,7 +169,7 @@ export default function WhyDifferentSection() {
                       <span className="font-inter font-medium text-sm">{row.freelancer.text}</span>
                     </div>
                   </div>
-                  <div className={`p-4 flex items-center ${index === comparisonData.length - 1 ? 'rounded-b-[64px]' : ''}`}>
+                  <div className={`p-4 flex items-center ${index === comparisonData.length - 1 ? 'rounded-b-[32px]' : ''}`}>
                     <div className="flex items-center gap-2 text-gray-200">
                       {row.traditionalAgency.has ? (
                         <div className="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
@@ -181,7 +183,7 @@ export default function WhyDifferentSection() {
                       <span className="font-inter font-medium text-sm">{row.traditionalAgency.text}</span>
                     </div>
                   </div>
-                  <div className={`p-4 flex items-center ${index === comparisonData.length - 1 ? 'rounded-b-[64px]' : ''}`}>
+                  <div className={`p-4 flex items-center ${index === comparisonData.length - 1 ? 'rounded-b-[32px]' : ''}`}>
                     <div className="flex items-center gap-2 text-gray-200">
                       {row.inHouse.has ? (
                         <div className="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
@@ -197,7 +199,8 @@ export default function WhyDifferentSection() {
                   </div>
                 </div>
               ))}
-            </div>
+              </div>
+            </ScrollArea>
           </div>
         </div>
       </div>
