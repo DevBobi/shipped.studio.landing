@@ -3,6 +3,7 @@ import CTASection from '@/components/sections/CTASection'
 import FAQSection from '@/components/sections/FAQSection'
 import Footer from '@/components/sections/Footer'
 import HeroSection from '@/components/sections/HeroSection'
+import OurWorkSection from '@/components/sections/OurWorkSection'
 import PricingSection from '@/components/sections/PricingSection'
 import ProcessSection from '@/components/sections/ProcessSection'
 import TeamSection from '@/components/sections/TeamSection'
@@ -17,6 +18,7 @@ export default function Home() {
       <BuiltToBuildSection />
       <ProcessSection />
       <PricingSection />
+      <OurWorkSection />
       <TestimonialsSection />
       <TeamSection />
       <FAQSection />

@@ -57,16 +57,16 @@ export default function FAQSection() {
           {faqs.map((faq, index) => (
             <Disclosure key={index}>
               {({ open }) => (
-                <div className="bg-gray-100 rounded-xl sm:rounded-2xl shadow-xs overflow-hidden border border-gray-200">
-                  <Disclosure.Button className="w-full px-4 sm:px-6 md:px-8 lg:px-10 py-4 sm:py-6 md:py-8 text-left flex items-center justify-between hover:bg-gray-50 transition-colors">
+                <div className="bg-white/80 rounded-xl sm:rounded-2xl overflow-hidden">
+                  <Disclosure.Button className="w-full px-4 sm:px-6 md:px-8 lg:px-10 py-4 sm:py-6 md:py-8 text-left flex items-center justify-between hover:bg-gray-100 transition-colors">
                     <span className="text-sm sm:text-base md:text-lg lg:text-xl font-medium text-gray-900 font-dm-sans pr-2 sm:pr-4 leading-tight">
                       {faq.question}
                     </span>
                     <div className="flex-shrink-0 ml-2 sm:ml-4">
                       {open ? (
-                        <FaMinus className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-purple-500" />
+                        <FaMinus className="w-4 h-4 sm:w-5 sm:h-5 md:w-5 md:h-5 text-gray-900" />
                       ) : (
-                        <FaPlus className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-purple-500" />
+                        <FaPlus className="w-4 h-4 sm:w-5 sm:h-5 md:w-5 md:h-5 text-gray-900" />
                       )}
                     </div>
                   </Disclosure.Button>

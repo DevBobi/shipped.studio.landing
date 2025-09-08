@@ -64,7 +64,7 @@ export default function MobileNav() {
               {/* CTA Button */}
               <div className="px-6 py-6 border-t border-gray-200">
                 <button className="w-full bg-gray-900 text-white px-6 py-4 rounded-full font-inter font-semibold text-lg hover:bg-gray-800 transition-colors">
-                  Book a Strategy Call
+                  Book a Call
                 </button>
               </div>
             </div>

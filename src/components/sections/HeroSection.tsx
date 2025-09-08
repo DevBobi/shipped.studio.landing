@@ -1,6 +1,6 @@
 'use client'
 
-import { FaArrowRight, FaPlay } from 'react-icons/fa'
+import { FaArrowRight, FaEye, FaPlay } from 'react-icons/fa'
 import MobileNav from '@/components/ui/MobileNav'
 import InfiniteCarousel from '@/components/ui/InfiniteCarousel'
 
@@ -17,7 +17,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="relative min-h-screen bg-gray-50 overflow-hidden">
+    <section className="relative min-h-screen bg-white overflow-hidden">
       {/* Full Section Noise Texture Overlay */}
       <div className="absolute inset-0 opacity-40">
         <div className="absolute inset-0" style={{
@@ -88,7 +88,7 @@ export default function HeroSection() {
           {/* CTA Button and Mobile Nav */}
           <div className="flex items-center gap-2 sm:gap-4">
             <button className="hidden md:block bg-gray-900 text-white px-6 py-3 rounded-full font-inter font-medium hover:bg-gray-800 transition-colors cursor-pointer">
-              Book a Strategy Call
+              Book a Call
             </button>
             <div className="md:hidden">
               <button
@@ -188,7 +188,7 @@ export default function HeroSection() {
             {/* CTA Button */}
             <div className="px-6 py-6 border-t border-gray-200">
               <button className="w-full bg-gray-900 text-white px-6 py-4 rounded-full font-inter font-semibold text-lg hover:bg-gray-800 transition-colors">
-                Book a Strategy Call
+                Book a Call
               </button>
             </div>
           </div>
@@ -199,7 +199,13 @@ export default function HeroSection() {
       <div className="relative z-10 px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 md:pt-24 pb-12 sm:pb-16 md:pb-20 min-h-screen sm:min-h-0 flex items-center">
         <div className="max-w-7xl mx-auto text-center">
           {/* Main Heading */}
-          <h1 className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold font-dm-sans leading-tight mb-6 sm:mb-8 px-2 sm:px-0">
+          <h1 className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl  font-dm-sans leading-tight mb-6 sm:mb-8 px-2 sm:px-0 tracking-tighter"
+          
+          style={{
+            fontWeight: '900',
+            
+          }}
+          >
             <span className="text-gray-900">Your Idea, Designed And</span><br />
             <span className="text-gray-900">Built In Just</span>{' '}
             <span className="text-white bg-gray-900 px-2 sm:px-4 py-1 sm:py-2 rounded-lg text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">21 Days.</span>
@@ -213,13 +219,10 @@ export default function HeroSection() {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mb-16 sm:mb-20 px-4 sm:px-0">
             <button className="w-full sm:w-auto bg-gray-900 text-white px-8 py-4 rounded-full font-inter font-semibold text-lg hover:bg-gray-800 transition-all duration-300 hover:scale-105 flex items-center justify-center gap-3 shadow-xl hover:shadow-2xl cursor-pointer">
-              Book a Strategy Call
+              Book a Call
               <FaArrowRight className="w-5 h-5" />
             </button>
-            <button className="w-full sm:w-auto text-gray-900 px-8 py-2 rounded-full font-inter font-semibold text-lg hover:text-gray-700 transition-all duration-300 hover:scale-105 flex items-center justify-center gap-3 cursor-pointer border-2 border-gray-900 hover:border-gray-700">
-              <div className="w-10 h-10 border-2 border-gray-900 rounded-full flex items-center justify-center">
-                <div className="w-0 h-0 border-l-[8px] border-l-gray-900 border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent ml-1"></div>
-              </div>
+            <button className="w-full sm:w-auto text-gray-900 px-8 py-3.5 rounded-full font-inter font-semibold text-lg hover:text-gray-700 transition-all duration-300 hover:scale-105 flex items-center justify-center gap-3 cursor-pointer border-2 border-gray-900 hover:border-gray-700">
               View Works
             </button>
           </div>

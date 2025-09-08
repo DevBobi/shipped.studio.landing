@@ -10,15 +10,14 @@ export default function OptimizedInfiniteCarousel() {
   const tickingRef = useRef(false)
 
   const carouselImages = useMemo(() => [
-    { src: '/carousel/image 24.png', title: 'Creative Design', subtitle: 'Innovative Solutions' },
-    { src: '/carousel/image 24-1.png', title: 'Modern Interface', subtitle: 'User Experience' },
-    { src: '/carousel/image 26.png', title: 'Digital Art', subtitle: 'Visual Excellence' },
-    { src: '/carousel/image 26-1.png', title: 'Web Development', subtitle: 'Code & Design' },
-    { src: '/carousel/image 27.png', title: 'Mobile Apps', subtitle: 'Cross Platform' },
-    { src: '/carousel/image 28.png', title: 'UI/UX Design', subtitle: 'User Centered' },
-    { src: '/carousel/image 29.png', title: 'Brand Identity', subtitle: 'Visual Branding' },
-    { src: '/carousel/image 41.png', title: 'Illustration', subtitle: 'Art & Creativity' },
-    { src: '/carousel/image 43.png', title: 'Digital Marketing', subtitle: 'Growth Strategy' },
+    { src: '/carousel/image-1.jpg', title: 'Test Whiz', subtitle: 'All-in-one AI platform for students.' },
+    { src: '/carousel/image-2.jpg', title: 'Krillion AI', subtitle: 'AI ad maker for quick, quality ads.' },
+    { src: '/carousel/image-3.jpg', title: 'Find me leads', subtitle: 'AI bot for finding leads on Reddit.' },
+    { src: '/carousel/image-4.png', title: 'Aura Maxxing', subtitle: 'iOS app for face analysis and dating.' },
+    { src: '/carousel/image-5.png', title: 'Content Wizard', subtitle: 'Curated open-source boilerplates.' },
+    { src: '/carousel/image-6.jpg', title: 'Opensource boilerplates', subtitle: 'Starter kits for modern apps.' },
+    { src: '/carousel/image-7.jpg', title: 'Re-engage', subtitle: 'AI tool to repurpose content for social.' },
+    { src: '/carousel/image-8.png', title: 'Crunkspot', subtitle: 'Web3 music marketplace for artists.' },
   ], [])
 
   // Optimized infinite array creation
@@ -100,16 +99,19 @@ export default function OptimizedInfiniteCarousel() {
         alt={`${image.title} - ${image.subtitle}`}
         loading="lazy"
         decoding="async"
-        className="h-64 w-auto sm:h-72 md:h-80 lg:h-96 xl:h-[28rem] object-contain opacity-80 group-hover:opacity-100 transition-all duration-300 shadow-lg hover:shadow-xl rounded-lg"
+        className="h-64 w-auto sm:h-72 md:h-80 lg:h-96 xl:h-[28rem] object-contain opacity-80 group-hover:opacity-100 transition-all duration-300 border-2 border-gray-200"
         style={{
-          filter: 'drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1)) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.06))',
-          willChange: 'transform, opacity'
+          willChange: 'transform, opacity',
+          borderRadius: '25px'
         }}
       />
       <div 
-        className="absolute inset-0 transition-opacity duration-300 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 rounded-lg cursor-pointer backdrop-blur-sm"
+        className="absolute top-0 left-0 transition-opacity duration-300 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 cursor-pointer backdrop-blur-sm border-2 border-gray-200"
         style={{
-          backgroundColor: 'rgba(0, 0, 0, 0.5)'
+          backgroundColor: 'rgba(0, 0, 0, 0.5)',
+          width: '100%',
+          height: '100%',
+          borderRadius: '25px'
         }}
       >
         <h3 className="text-white text-lg sm:text-xl md:text-2xl font-bold text-center mb-2 px-3 drop-shadow-lg">
@@ -123,7 +125,9 @@ export default function OptimizedInfiniteCarousel() {
   ), [])
 
   return (
-          <div className="w-full bg-white py-12 sm:py-16 md:py-20 lg:py-24 overflow-hidden">
+          <div 
+          className="w-full bg-white py-12 sm:py-16 md:py-20 lg:py-24 overflow-hidden"
+          >
       {/* First Row - Moves Right */}
       <div className="mb-8 sm:mb-10 md:mb-12">
         <div 
