@@ -89,7 +89,7 @@ export default function OurWorkSection() {
   };
 
   return (
-    <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gray-50 relative overflow-hidden">
+    <section id="our-work" className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gray-50 relative overflow-hidden">
       {/* Noise Texture Overlay */}
       <div className="absolute inset-0 opacity-40">
         <div className="absolute inset-0" style={{

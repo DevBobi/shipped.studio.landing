@@ -222,7 +222,15 @@ export default function HeroSection() {
               Book a Call
               <FaArrowRight className="w-5 h-5" />
             </button>
-            <button className="w-full sm:w-auto text-gray-900 px-8 py-3.5 rounded-full font-inter font-semibold text-lg hover:text-gray-700 transition-all duration-300 hover:scale-105 flex items-center justify-center gap-3 cursor-pointer border-2 border-gray-900 hover:border-gray-700">
+            <button 
+              onClick={() => {
+                const element = document.getElementById('our-work');
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+              className="w-full sm:w-auto text-gray-900 px-8 py-3.5 rounded-full font-inter font-semibold text-lg hover:text-gray-700 transition-all duration-300 hover:scale-105 flex items-center justify-center gap-3 cursor-pointer border-2 border-gray-900 hover:border-gray-700"
+            >
               View Works
             </button>
           </div>
