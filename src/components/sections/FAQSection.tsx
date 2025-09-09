@@ -60,7 +60,7 @@ export default function FAQSection() {
             <Disclosure key={index}>
               {({ open }) => (
                 <div className="bg-white/80 rounded-xl sm:rounded-2xl overflow-hidden border border-gray-200/50 shadow-sm">
-                  <Disclosure.Button className="w-full px-4 sm:px-6 md:px-8 lg:px-10 py-4 sm:py-6 md:py-8 text-left flex items-center justify-between hover:bg-gray-50/80 transition-colors">
+                  <Disclosure.Button className="w-full px-4 sm:px-6 md:px-8 py-4 sm:py-6  text-left flex items-center justify-between hover:bg-gray-50/80 transition-colors">
                     <span className="text-sm sm:text-base md:text-lg lg:text-xl font-medium text-primary font-dm-sans pr-2 sm:pr-4 leading-tight">
                       {faq.question}
                     </span>

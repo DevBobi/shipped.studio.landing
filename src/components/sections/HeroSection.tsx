@@ -7,7 +7,7 @@ import Image from "next/image";
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen overflow-hidden">
+    <section className="relative overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-screen sm:h-[800px] md:h-[850px] lg:h-[900px] overflow-hidden">
         <img
           src="/hero bg.png"
