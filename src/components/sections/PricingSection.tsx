@@ -44,13 +44,13 @@ export default function PricingSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-12 sm:mb-16 md:mb-20">
-          <div className="text-xs sm:text-sm font-semibold text-purple-600 uppercase tracking-wider mb-3 sm:mb-4">
+          <div className="text-xs sm:text-sm font-semibold text-purple-dark uppercase tracking-wider mb-3 sm:mb-4">
             Simple Pricing
           </div>
-          <h2 className="tracking-tighter text-4xl md:text-5xl font-bold text-gray-900 font-dm-sans mb-6">
+          <h2 className="tracking-tighter text-4xl md:text-5xl font-bold text-primary font-dm-sans mb-6">
             Simple packages, no surprises.
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-gray-600 font-inter max-w-3xl mx-auto leading-relaxed px-4">
+          <p className="text-base sm:text-lg md:text-xl text-muted font-inter max-w-3xl mx-auto leading-relaxed px-4">
             Choose the package that fits your needs. All prices are fixed with
             no hidden costs.
           </p>
@@ -64,7 +64,7 @@ export default function PricingSection() {
               className={`relative rounded-[20px] sm:rounded-[25px] lg:rounded-[35px] shadow-sm transition-all duration-300 overflow-hidden ${
                 plan.highlighted
                   ? "bg-blue-500 text-white"
-                  : "bg-white text-gray-900"
+                  : "bg-white text-primary"
               }`}
             >
               {/* Plan Header with Background */}
@@ -75,14 +75,14 @@ export default function PricingSection() {
               >
                 <h3
                   className={`text-xl sm:text-2xl font-bold font-dm-sans mb-3 sm:mb-4 ${
-                    plan.highlighted ? "text-white" : "text-gray-900"
+                    plan.highlighted ? "text-white" : "text-primary"
                   }`}
                 >
                   {plan.name}
                 </h3>
                 <p
                   className={`text-sm sm:text-base lg:text-lg mb-4 sm:mb-6 leading-relaxed ${
-                    plan.highlighted ? "text-white" : "text-gray-600"
+                    plan.highlighted ? "text-white" : "text-muted"
                   }`}
                 >
                   {plan.description}
@@ -90,14 +90,14 @@ export default function PricingSection() {
                 <div className="mb-4 sm:mb-6">
                   <span
                     className={`text-xs sm:text-sm ${
-                      plan.highlighted ? "text-white" : "text-gray-600"
+                      plan.highlighted ? "text-white" : "text-muted"
                     }`}
                   >
                     Starts at just
                   </span>
                   <div
                     className={`text-3xl sm:text-4xl font-bold font-dm-sans ${
-                      plan.highlighted ? "text-white" : "text-gray-900"
+                      plan.highlighted ? "text-white" : "text-primary"
                     }`}
                   >
                     {plan.price}
@@ -117,14 +117,14 @@ export default function PricingSection() {
                         className={`w-4 h-4 sm:w-5 sm:h-5 flex items-center justify-center flex-shrink-0 mt-0.5 ${
                           plan.highlighted
                             ? "bg-blue-500 text-white rounded-full"
-                            : "text-blue-500"
+                            : "text-blue"
                         }`}
                       >
                         <FaCheck className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
                       </div>
                       <span
                         className={`text-sm sm:text-base font-inter leading-relaxed ${
-                          plan.highlighted ? "text-white" : "text-gray-700"
+                          plan.highlighted ? "text-white" : "text-secondary"
                         }`}
                       >
                         {feature}
@@ -137,7 +137,7 @@ export default function PricingSection() {
                 <button
                   className={`w-full py-3 sm:py-4 rounded-full font-inter font-semibold text-sm sm:text-base transition-all duration-300 ${
                     plan.highlighted
-                      ? "bg-white text-blue-500 hover:bg-gray-100"
+                      ? "bg-white text-blue hover:bg-gray-100"
                       : "bg-blue-500 text-white hover:bg-blue-600"
                   }`}
                 >

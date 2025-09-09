@@ -27,16 +27,16 @@ export default function HeroSection() {
               fontWeight: "900",
             }}
           >
-            <span className="text-gray-900">Your Idea, Designed And</span>
+            <span className="text-primary">Your Idea, Designed And</span>
             <br />
-            <span className="text-gray-900">Built In Just</span>{" "}
+            <span className="text-primary">Built In Just</span>{" "}
             <span className="text-white bg-gray-900 px-2 sm:px-4 py-1 sm:py-2 rounded-lg text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">
               21 Days.
             </span>
           </h1>
 
           {/* Subheading */}
-          <p className="text-lg sm:text-xl md:text-2xl text-gray-600 font-inter max-w-4xl mx-auto mb-12 sm:mb-16 leading-relaxed px-4 sm:px-0">
+          <p className="text-lg sm:text-xl md:text-2xl text-muted font-inter max-w-4xl mx-auto mb-12 sm:mb-16 leading-relaxed px-4 sm:px-0">
             We Build, Launch & Grow Your SaaS In 2-3 Weeks With No Surprises.
             From MVP To Market-Ready Product
           </p>
@@ -54,7 +54,7 @@ export default function HeroSection() {
                   element.scrollIntoView({ behavior: "smooth" });
                 }
               }}
-              className="w-full sm:w-auto text-gray-900 px-8 py-3.5 rounded-full font-inter font-semibold text-lg hover:text-gray-700 transition-all duration-300 hover:scale-105 flex items-center justify-center gap-3 cursor-pointer border-2 border-gray-900 hover:border-gray-700"
+              className="w-full sm:w-auto text-primary px-8 py-3.5 rounded-full font-inter font-semibold text-lg hover:text-gray-700 transition-all duration-300 hover:scale-105 flex items-center justify-center gap-3 cursor-pointer border-2 border-gray-900 hover:border-gray-700"
             >
               View Works
             </button>
@@ -63,7 +63,7 @@ export default function HeroSection() {
           {/* Recent Work Section */}
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-8 px-4 sm:px-0">
             {/* Doodles */}
-            <div className="flex items-center gap-3 text-gray-600 font-inter text-sm">
+            <div className="flex items-center gap-3 text-muted font-inter text-sm">
               <Image
                 src="/hero-doodles.png"
                 alt="Decorative doodles"

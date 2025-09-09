@@ -11,12 +11,12 @@ export default function Footer() {
     <footer className="relative overflow-hidden py-20">
       <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center relative z-10">
         {/* Company Title */}
-        <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 font-dm-sans mb-6">
+        <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary font-dm-sans mb-6">
           Shipped Studio
         </h3>
 
         {/* Description */}
-        <p className="text-gray-700 font-inter leading-relaxed max-w-2xl mx-auto text-lg mb-12">
+        <p className="text-secondary font-inter leading-relaxed max-w-2xl mx-auto text-lg mb-12">
           Done-for-you MVP development services, delivered by 10-year SaaS
           experts.
         </p>
@@ -27,7 +27,7 @@ export default function Footer() {
             <a
               key={index}
               href={link.href}
-              className="text-gray-700 hover:text-gray-900 font-inter transition-colors"
+              className="text-secondary hover:text-primary font-inter transition-colors"
             >
               {link.name}
             </a>
@@ -35,7 +35,7 @@ export default function Footer() {
         </nav>
 
         {/* Copyright */}
-        <p className="text-gray-600 font-inter text-sm">
+        <p className="text-muted font-inter text-sm">
           © 2025 Shipped.Studio All rights reserved.
         </p>
       </div>

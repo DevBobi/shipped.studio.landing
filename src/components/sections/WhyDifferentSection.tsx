@@ -37,7 +37,7 @@ export default function WhyDifferentSection() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 font-dm-sans mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-primary font-dm-sans mb-6">
             Why we&apos;re different
           </h2>
         </div>
@@ -51,7 +51,7 @@ export default function WhyDifferentSection() {
               <div className="p-6 text-white font-medium font-dm-sans mt-2">
                 Category
               </div>
-              <div className="bg-gray-300 p-6 mt-2 text-gray-900 font-bold text-center font-dm-sans rounded-t-[50px]">
+              <div className="bg-gray-300 p-6 mt-2 text-primary font-bold text-center font-dm-sans rounded-t-[50px]">
                 Shipped Studio
               </div>
               <div className="p-6 text-white font-medium text-center font-dm-sans mt-2">
@@ -81,7 +81,7 @@ export default function WhyDifferentSection() {
                       : ""
                   }`}
                 >
-                  <div className="flex items-center gap-3 font-bold text-gray-900">
+                  <div className="flex items-center gap-3 font-bold text-primary">
                     <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
                       <FaCheck className="w-3 h-3 text-white" />
                     </div>
@@ -97,7 +97,7 @@ export default function WhyDifferentSection() {
                       : ""
                   }`}
                 >
-                  <div className="flex items-center gap-3 text-gray-200">
+                  <div className="flex items-center gap-3 text-light-gray">
                     {row.freelancer.has ? (
                       <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
                         <FaCheck className="w-3 h-3 text-white" />
@@ -119,7 +119,7 @@ export default function WhyDifferentSection() {
                       : ""
                   }`}
                 >
-                  <div className="flex items-center gap-3 text-gray-200">
+                  <div className="flex items-center gap-3 text-light-gray">
                     {row.traditionalAgency.has ? (
                       <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
                         <FaCheck className="w-3 h-3 text-white" />
@@ -141,7 +141,7 @@ export default function WhyDifferentSection() {
                       : ""
                   }`}
                 >
-                  <div className="flex items-center gap-3 text-gray-200">
+                  <div className="flex items-center gap-3 text-light-gray">
                     {row.inHouse.has ? (
                       <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
                         <FaCheck className="w-3 h-3 text-white" />
@@ -168,7 +168,7 @@ export default function WhyDifferentSection() {
                 <div className="p-4 text-white font-medium font-dm-sans mt-2 text-sm">
                   Category
                 </div>
-                <div className="bg-gray-300 p-4 mt-2 text-gray-900 font-bold text-center font-dm-sans rounded-t-[16px] text-sm">
+                <div className="bg-gray-300 p-4 mt-2 text-primary font-bold text-center font-dm-sans rounded-t-[16px] text-sm">
                   Shipped Studio
                 </div>
                 <div className="p-4 text-white font-medium text-center font-dm-sans mt-2 text-sm">
@@ -198,7 +198,7 @@ export default function WhyDifferentSection() {
                         : ""
                     }`}
                   >
-                    <div className="flex items-center gap-2 font-bold text-gray-900">
+                    <div className="flex items-center gap-2 font-bold text-primary">
                       <div className="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
                         <FaCheck className="w-2.5 h-2.5 text-white" />
                       </div>
@@ -214,7 +214,7 @@ export default function WhyDifferentSection() {
                         : ""
                     }`}
                   >
-                    <div className="flex items-center gap-2 text-gray-200">
+                    <div className="flex items-center gap-2 text-light-gray">
                       {row.freelancer.has ? (
                         <div className="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
                           <FaCheck className="w-2.5 h-2.5 text-white" />
@@ -236,7 +236,7 @@ export default function WhyDifferentSection() {
                         : ""
                     }`}
                   >
-                    <div className="flex items-center gap-2 text-gray-200">
+                    <div className="flex items-center gap-2 text-light-gray">
                       {row.traditionalAgency.has ? (
                         <div className="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
                           <FaCheck className="w-2.5 h-2.5 text-white" />
@@ -258,7 +258,7 @@ export default function WhyDifferentSection() {
                         : ""
                     }`}
                   >
-                    <div className="flex items-center gap-2 text-gray-200">
+                    <div className="flex items-center gap-2 text-light-gray">
                       {row.inHouse.has ? (
                         <div className="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
                           <FaCheck className="w-2.5 h-2.5 text-white" />

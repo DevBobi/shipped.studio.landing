@@ -45,9 +45,9 @@ export default function ProcessSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-12 sm:mb-16 md:mb-20">
-          <h2 className="tracking-tighter leading-normal text-2xl md:text-5xl sm:text-3xl font-bold text-gray-900 font-dm-sans mb-6">
+          <h2 className="tracking-tighter leading-normal text-2xl md:text-5xl sm:text-3xl font-bold text-primary font-dm-sans mb-6">
             We don&apos;t follow a fixed template. Our process{" "}
-            <span className="text-purple-500">adapts</span> with every product,
+            <span className="text-purple">adapts</span> with every product,
             client, and challenge.
           </h2>
         </div>
@@ -80,22 +80,22 @@ export default function ProcessSection() {
                     <div className="flex items-center gap-2 md:gap-2">
                       {/* Step Number - Before Heading */}
                       <div className="flex-shrink-0">
-                        <div className=" rounded-full flex items-center justify-center text-gray-400 text-2xl font-bold font-dm-sans">
+                        <div className=" rounded-full flex items-center justify-center text-light text-2xl font-bold font-dm-sans">
                           {step.number}
                         </div>
                       </div>
-                      <h3 className="text-lg md:text-xl lg:text-2xl font-bold text-gray-900 font-dm-sans">
+                      <h3 className="text-lg md:text-xl lg:text-2xl font-bold text-primary font-dm-sans">
                         {step.title}
                       </h3>
                     </div>
 
                     {/* Time Duration - Right Side with Icon */}
-                    <div className="flex items-center gap-2 text-sm md:text-lg text-gray-500 font-inter font-medium">
+                    <div className="flex items-center gap-2 text-sm md:text-lg text-light font-inter font-medium">
                       <LuClock4 />
                       <span>{step.timeEstimate}</span>
                     </div>
                   </div>
-                  <p className="text-sm max-w-2xl md:text-base lg:text-lg text-gray-600 font-inter leading-relaxed">
+                  <p className="text-sm max-w-2xl md:text-base lg:text-lg text-muted font-inter leading-relaxed">
                     {step.description}
                   </p>
                 </div>

@@ -109,10 +109,10 @@ export default function OurWorkSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-12 sm:mb-16 md:mb-20">
-          <h2 className="tracking-tighter text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 font-dm-sans mb-6">
+          <h2 className="tracking-tighter text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-primary font-dm-sans mb-6">
             Our Work
           </h2>
-          <p className="text-lg sm:text-xl md:text-2xl text-gray-600 font-inter max-w-4xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl md:text-2xl text-muted font-inter max-w-4xl mx-auto leading-relaxed">
             Scalable MVP in 15 days that actually delivers. We build any SaaS
             idea whether for web or mobile.
           </p>
@@ -160,12 +160,12 @@ export default function OurWorkSection() {
               </div>
 
               {/* Project Title - Moved to bottom */}
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 font-dm-sans mb-3 sm:mb-4 md:mb-5 lg:mb-6">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-primary font-dm-sans mb-3 sm:mb-4 md:mb-5 lg:mb-6">
                 {project.title}
               </h3>
 
               {/* Project Description */}
-              <div className="text-sm sm:text-base md:text-lg text-gray-600 font-inter leading-relaxed">
+              <div className="text-sm sm:text-base md:text-lg text-muted font-inter leading-relaxed">
                 <p>
                   {expandedDescriptions.has(project.id)
                     ? project.description
@@ -174,7 +174,7 @@ export default function OurWorkSection() {
                 {project.description.length > 120 && (
                   <button
                     onClick={() => toggleDescription(project.id)}
-                    className="text-blue-600 hover:text-blue-800 font-medium mt-2 transition-colors duration-200 text-sm sm:text-base"
+                    className="text-blue-dark hover:text-blue-dark font-medium mt-2 transition-colors duration-200 text-sm sm:text-base"
                   >
                     {expandedDescriptions.has(project.id)
                       ? "See Less"

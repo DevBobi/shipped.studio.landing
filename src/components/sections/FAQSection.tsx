@@ -45,10 +45,10 @@ export default function FAQSection() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-12 sm:mb-16 md:mb-20">
-          <h2 className="tracking-tighter text-4xl md:text-5xl font-bold text-gray-900 font-dm-sans mb-6">
+          <h2 className="tracking-tighter text-4xl md:text-5xl font-bold text-primary font-dm-sans mb-6">
             Frequently Asked Questions
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-gray-600 font-inter max-w-3xl mx-auto leading-relaxed px-2 sm:px-0">
+          <p className="text-base sm:text-lg md:text-xl text-muted font-inter max-w-3xl mx-auto leading-relaxed px-2 sm:px-0">
             Got questions? We've got answers. Here are the most common questions
             we receive about our services and process.
           </p>
@@ -61,21 +61,21 @@ export default function FAQSection() {
               {({ open }) => (
                 <div className="bg-white/80 rounded-xl sm:rounded-2xl overflow-hidden border border-gray-200/50 shadow-sm">
                   <Disclosure.Button className="w-full px-4 sm:px-6 md:px-8 lg:px-10 py-4 sm:py-6 md:py-8 text-left flex items-center justify-between hover:bg-gray-50/80 transition-colors">
-                    <span className="text-sm sm:text-base md:text-lg lg:text-xl font-medium text-gray-900 font-dm-sans pr-2 sm:pr-4 leading-tight">
+                    <span className="text-sm sm:text-base md:text-lg lg:text-xl font-medium text-primary font-dm-sans pr-2 sm:pr-4 leading-tight">
                       {faq.question}
                     </span>
                     <div className="flex-shrink-0 ml-2 sm:ml-4">
                       {open ? (
-                        <FaMinus className="w-4 h-4 sm:w-5 sm:h-5 md:w-5 md:h-5 text-gray-600" />
+                        <FaMinus className="w-4 h-4 sm:w-5 sm:h-5 md:w-5 md:h-5 text-muted" />
                       ) : (
-                        <FaPlus className="w-4 h-4 sm:w-5 sm:h-5 md:w-5 md:h-5 text-gray-600" />
+                        <FaPlus className="w-4 h-4 sm:w-5 sm:h-5 md:w-5 md:h-5 text-muted" />
                       )}
                     </div>
                   </Disclosure.Button>
 
                   <Disclosure.Panel className="px-4 sm:px-6 md:px-8 lg:px-10 pb-4 sm:pb-6 md:pb-8 border-t border-gray-200/30">
                     <div className="pt-4 sm:pt-6">
-                      <p className="text-sm sm:text-base md:text-lg text-gray-600 font-inter leading-relaxed">
+                      <p className="text-sm sm:text-base md:text-lg text-muted font-inter leading-relaxed">
                         {faq.answer}
                       </p>
                     </div>

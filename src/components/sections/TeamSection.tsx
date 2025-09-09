@@ -25,7 +25,7 @@ export default function TeamSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-12 sm:mb-16 md:mb-20">
-          <h2 className="tracking-tighter text-4xl md:text-5xl font-bold text-gray-900 font-dm-sans mb-6">
+          <h2 className="tracking-tighter text-4xl md:text-5xl font-bold text-primary font-dm-sans mb-6">
             Our Team
           </h2>
         </div>
@@ -51,7 +51,7 @@ export default function TeamSection() {
                 <h3 className="text-xl font-bold text-white font-dm-sans mb-2">
                   {member.name}
                 </h3>
-                <p className="text-gray-200 font-inter mb-4">{member.role}</p>
+                <p className="text-light-gray font-inter mb-4">{member.role}</p>
 
                 {/* Social Links */}
                 <div className="flex items-center gap-1">
@@ -65,7 +65,7 @@ export default function TeamSection() {
                     href="#"
                     className="w-8 h-8 rounded-full flex items-center justify-center hover:bg-blue-600 hover:scale-110 transition-all duration-300 group"
                   >
-                    <FaLinkedin className="w-4 h-4 text-blue-600 group-hover:text-white transition-colors duration-300" />
+                    <FaLinkedin className="w-4 h-4 text-blue-dark group-hover:text-white transition-colors duration-300" />
                   </a>
                 </div>
               </div>

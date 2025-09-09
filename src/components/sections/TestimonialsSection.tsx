@@ -64,7 +64,7 @@ export default function TestimonialsSection() {
 
   const StarIcon = () => (
     <svg
-      className="w-6 h-6 text-yellow-400"
+      className="w-6 h-6 text-yellow"
       fill="currentColor"
       viewBox="0 0 20 20"
     >
@@ -77,10 +77,10 @@ export default function TestimonialsSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-12 sm:mb-16 md:mb-20">
-          <h2 className="tracking-tighter text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 font-dm-sans mb-4 sm:mb-6 leading-tight">
+          <h2 className="tracking-tighter text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-primary font-dm-sans mb-4 sm:mb-6 leading-tight">
             What our customers say?
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-gray-600 font-inter leading-relaxed max-w-3xl mx-auto px-4">
+          <p className="text-base sm:text-lg md:text-xl text-muted font-inter leading-relaxed max-w-3xl mx-auto px-4">
             Real results from founders who launched faster with Shipped Studio
           </p>
         </div>
@@ -89,7 +89,7 @@ export default function TestimonialsSection() {
         <div className="lg:hidden">
           {/* Main Content Section */}
           <div className="text-center mb-8">
-            <h2 className="text-3xl sm:text-4xl font-medium text-gray-900 mb-6 sm:mb-8 leading-tight">
+            <h2 className="text-3xl sm:text-4xl font-medium text-primary mb-6 sm:mb-8 leading-tight">
               No one tells you the hardest part of starting up
             </h2>
             <div className="flex items-center justify-center mb-6 sm:mb-8">
@@ -101,15 +101,15 @@ export default function TestimonialsSection() {
                 />
               </div>
               <div className="text-left min-w-0">
-                <h4 className="text-lg sm:text-xl font-semibold text-gray-900">
+                <h4 className="text-lg sm:text-xl font-semibold text-primary">
                   Lisa Thompson
                 </h4>
-                <p className="text-gray-600 text-sm sm:text-lg">
+                <p className="text-muted text-sm sm:text-lg">
                   Founder at DataSync Pro
                 </p>
               </div>
             </div>
-            <p className="text-lg sm:text-xl text-gray-600 leading-relaxed mb-6 sm:mb-8">
+            <p className="text-lg sm:text-xl text-muted leading-relaxed mb-6 sm:mb-8">
               &ldquo;I&apos;ve seen too many founders waste $100k+ and months of
               precious time building their MVP. Let&apos;s get your idea to
               market in 14 days, so you can focus on what matters - your
@@ -165,10 +165,10 @@ export default function TestimonialsSection() {
                           />
                         </div>
                         <div className="min-w-0">
-                          <h4 className="text-lg sm:text-xl font-semibold text-gray-900">
+                          <h4 className="text-lg sm:text-xl font-semibold text-primary">
                             {testimonial.name}
                           </h4>
-                          <p className="text-gray-600 text-sm sm:text-lg">
+                          <p className="text-muted text-sm sm:text-lg">
                             {testimonial.role}
                           </p>
                           <div className="flex items-center gap-1">
@@ -180,7 +180,7 @@ export default function TestimonialsSection() {
                       </div>
 
                       {/* Testimonial Text */}
-                      <p className="text-gray-700 leading-relaxed text-base sm:text-lg">
+                      <p className="text-secondary leading-relaxed text-base sm:text-lg">
                         &ldquo;{testimonial.text}&rdquo;
                       </p>
                     </div>
@@ -234,10 +234,10 @@ export default function TestimonialsSection() {
                           />
                         </div>
                         <div className="min-w-0">
-                          <h4 className="text-xl font-semibold text-gray-900">
+                          <h4 className="text-xl font-semibold text-primary">
                             {testimonial.name}
                           </h4>
-                          <p className="text-gray-600 text-lg">
+                          <p className="text-muted text-lg">
                             {testimonial.role}
                           </p>
                           <div className="flex items-center gap-1">
@@ -249,7 +249,7 @@ export default function TestimonialsSection() {
                       </div>
 
                       {/* Testimonial Text */}
-                      <p className="text-gray-700 leading-relaxed text-lg">
+                      <p className="text-secondary leading-relaxed text-lg">
                         &ldquo;{testimonial.text}&rdquo;
                       </p>
                     </div>
@@ -261,7 +261,7 @@ export default function TestimonialsSection() {
 
           {/* Right Column - Main Text */}
           <div className="text-left">
-            <h2 className="text-4xl font-medium text-gray-900 mb-8 leading-tight">
+            <h2 className="text-4xl font-medium text-primary mb-8 leading-tight">
               No one tells you the hardest part of starting up
             </h2>
             <div className="flex items-center mb-8">
@@ -273,13 +273,13 @@ export default function TestimonialsSection() {
                 />
               </div>
               <div className="min-w-0">
-                <h4 className="text-xl font-semibold text-gray-900">
+                <h4 className="text-xl font-semibold text-primary">
                   Lisa Thompson
                 </h4>
-                <p className="text-gray-600 text-lg">Founder at DataSync Pro</p>
+                <p className="text-muted text-lg">Founder at DataSync Pro</p>
               </div>
             </div>
-            <p className="text-xl text-gray-600 leading-relaxed mb-8">
+            <p className="text-xl text-muted leading-relaxed mb-8">
               &ldquo;I&apos;ve seen too many founders waste $100k+ and months of
               precious time building their MVP. Let&apos;s get your idea to
               market in 14 days, so you can focus on what matters - your

@@ -3,6 +3,22 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  /* Text Colors */
+  --color-primary: #111827; /* gray-900 */
+  --color-secondary: #374151; /* gray-700 */
+  --color-muted: #4b5563; /* gray-600 */
+  --color-light: #6b7280; /* gray-500 */
+  --color-icon: #475569; /* slate-600 */
+  --color-white: #ffffff; /* white */
+  --color-light-gray: #e5e7eb; /* gray-200 */
+
+  /* Accent Colors */
+  --color-purple: #8b5cf6; /* purple-500 */
+  --color-purple-dark: #7c3aed; /* purple-600 */
+  --color-blue: #3b82f6; /* blue-500 */
+  --color-blue-dark: #2563eb; /* blue-600 */
+  --color-yellow: #fbbf24; /* yellow-400 */
 }
 
 html {
@@ -10,15 +26,29 @@ html {
 }
 
 @theme {
-  --font-dm-sans: var(--font-dm-sans);
-  --font-inter: var(--font-inter);
-}
-
-@theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* Text Colors */
+  --color-primary: var(--color-primary);
+  --color-secondary: var(--color-secondary);
+  --color-muted: var(--color-muted);
+  --color-light: var(--color-light);
+  --color-icon: var(--color-icon);
+  --color-white: var(--color-white);
+  --color-light-gray: var(--color-light-gray);
+
+  /* Accent Colors */
+  --color-purple: var(--color-purple);
+  --color-purple-dark: var(--color-purple-dark);
+  --color-blue: var(--color-blue);
+  --color-blue-dark: var(--color-blue-dark);
+  --color-yellow: var(--color-yellow);
+
+  --font-dm-sans: var(--font-dm-sans);
+  --font-inter: var(--font-inter);
 }
 
 @media (prefers-color-scheme: dark) {
