@@ -1,5 +1,6 @@
 import { FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import Image from "next/image";
 
 export default function TeamSection() {
   const teamMembers = [
@@ -38,11 +39,12 @@ export default function TeamSection() {
               className="relative rounded-2xl overflow-hidden shadow-sm"
             >
               {/* Team Member Image - Full Card */}
-              <div className="w-full h-80">
-                <img
+              <div className="w-full h-80 relative">
+                <Image
                   src={member.image}
                   alt={member.name}
-                  className="w-full h-full object-cover"
+                  fill
+                  className="object-cover"
                 />
               </div>
 

@@ -113,14 +113,14 @@ export default function OurWorkSection() {
             Our Work
           </h2>
           <p className="text-lg sm:text-xl md:text-2xl text-muted font-inter max-w-4xl mx-auto leading-relaxed">
-            Scalable MVP in 15 days that actually delivers. We build any SaaS
+            Scalable MVP in 21 days that actually delivers. We build any SaaS
             idea whether for web or mobile.
           </p>
         </div>
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-16 mb-12 sm:mb-16 md:mb-20">
-          {displayedProjects.map((project, index) => (
+          {displayedProjects.map((project) => (
             <div key={project.id} className="relative">
               {/* Project Image */}
               <div className="relative mb-4 sm:mb-5 md:mb-6">

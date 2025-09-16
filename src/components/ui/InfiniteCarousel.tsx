@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useCallback, useMemo } from "react";
+import Image from "next/image";
 
 export default function OptimizedInfiniteCarousel() {
   const firstRowRef = useRef<HTMLDivElement>(null);
@@ -9,7 +10,8 @@ export default function OptimizedInfiniteCarousel() {
   const lastScrollYRef = useRef(0);
   const tickingRef = useRef(false);
 
-  const carouselImages = useMemo(
+  // All images combined
+  const allImages = useMemo(
     () => [
       {
         src: "/carousel/image-1.jpg",
@@ -47,28 +49,102 @@ export default function OptimizedInfiniteCarousel() {
         subtitle: "AI tool to repurpose content for social.",
       },
       {
-        src: "/carousel/image-8.png",
+        src: "/carousel/image-8.jpg",
         title: "Crunkspot",
         subtitle: "Web3 music marketplace for artists.",
+      },
+      {
+        src: "/carousel/image-9.png",
+        title: "Ultra Woman",
+        subtitle: "Modern women's fashion and lifestyle platform.",
+      },
+      {
+        src: "/carousel/image-10.png",
+        title: "Meta Frenchies",
+        subtitle: "NFT collection featuring French Bulldog characters.",
+      },
+      {
+        src: "/carousel/image-11.png",
+        title: "Goolops",
+        subtitle: "Next.js application for modern web development.",
+      },
+      {
+        src: "/carousel/image-12.png",
+        title: "Self Loathing",
+        subtitle: "Interactive platform exploring mental health themes.",
+      },
+      {
+        src: "/carousel/image-13.png",
+        title: "Psycho Cats",
+        subtitle: "Unique NFT collection with feline characters.",
+      },
+      {
+        src: "/carousel/image-14.png",
+        title: "Tiger NFT",
+        subtitle: "Exclusive tiger-themed NFT marketplace.",
+      },
+      {
+        src: "/carousel/image-15.png",
+        title: "WL Safehouse",
+        subtitle: "Whitelist management for NFT communities.",
+      },
+      {
+        src: "/carousel/image-16.png",
+        title: "Fiverr Project",
+        subtitle: "Professional freelance services platform.",
+      },
+      {
+        src: "/carousel/image-17.png",
+        title: "MMB NFT",
+        subtitle: "Multi-media blockchain NFT collection.",
       },
     ],
     []
   );
 
-  // Optimized infinite array creation
-  const infiniteImages = useMemo(() => {
+  // Distribute images across three rows (6, 6, 5)
+  const firstRowImages = useMemo(() => allImages.slice(0, 6), [allImages]);
+  const secondRowImages = useMemo(() => allImages.slice(6, 12), [allImages]);
+  const thirdRowImages = useMemo(() => allImages.slice(12, 17), [allImages]);
+
+  // Create infinite arrays for each row
+  const firstRowInfinite = useMemo(() => {
     const result = [];
     for (let i = 0; i < 3; i++) {
-      result.push(...carouselImages);
+      result.push(...firstRowImages);
     }
     return result;
-  }, [carouselImages]);
+  }, [firstRowImages]);
+
+  const secondRowInfinite = useMemo(() => {
+    const result = [];
+    for (let i = 0; i < 3; i++) {
+      result.push(...secondRowImages);
+    }
+    return result;
+  }, [secondRowImages]);
+
+  const thirdRowInfinite = useMemo(() => {
+    const result = [];
+    for (let i = 0; i < 3; i++) {
+      result.push(...thirdRowImages);
+    }
+    return result;
+  }, [thirdRowImages]);
 
   // Memoize constants - reduced image width for compactness
   const IMAGE_WIDTH = 220;
-  const totalSetWidth = useMemo(
-    () => carouselImages.length * IMAGE_WIDTH,
-    [carouselImages.length]
+  const firstRowSetWidth = useMemo(
+    () => firstRowImages.length * IMAGE_WIDTH,
+    [firstRowImages.length]
+  );
+  const secondRowSetWidth = useMemo(
+    () => secondRowImages.length * IMAGE_WIDTH,
+    [secondRowImages.length]
+  );
+  const thirdRowSetWidth = useMemo(
+    () => thirdRowImages.length * IMAGE_WIDTH,
+    [thirdRowImages.length]
   );
 
   // Optimized scroll handler using useCallback
@@ -99,10 +175,10 @@ export default function OptimizedInfiniteCarousel() {
       const scrollProgress = scrollY / maxScroll;
       const loopedProgress = scrollProgress % 1;
 
-      // Batch DOM updates
-      const translateX1 = loopedProgress * totalSetWidth;
-      const translateX2 = loopedProgress * totalSetWidth;
-      const translateX3 = loopedProgress * totalSetWidth * 1.5;
+      // Batch DOM updates - different widths for each row
+      const translateX1 = loopedProgress * firstRowSetWidth;
+      const translateX2 = loopedProgress * secondRowSetWidth;
+      const translateX3 = loopedProgress * thirdRowSetWidth * 1.5;
 
       if (firstRowRef.current) {
         (
@@ -124,7 +200,7 @@ export default function OptimizedInfiniteCarousel() {
 
       tickingRef.current = false;
     });
-  }, [totalSetWidth]);
+  }, [firstRowSetWidth, secondRowSetWidth, thirdRowSetWidth]);
 
   useEffect(() => {
     // Use passive listener for better performance
@@ -145,14 +221,23 @@ export default function OptimizedInfiniteCarousel() {
       index: number;
     }) => (
       <div key={`${image.src}-${index}`} className="flex-shrink-0">
-        <img
+        <Image
           src={image.src}
           alt={`${image.title} - ${image.subtitle}`}
-          loading="lazy"
-          decoding="async"
+          width={288}
+          height={288}
           className="h-48 w-auto sm:h-56 md:h-64 lg:h-72 object-contain border border-gray-200"
           style={{
             borderRadius: "15px",
+          }}
+          loading="lazy"
+          onError={(e) => {
+            console.error(`Failed to load image: ${image.src}`);
+            // Fallback to a placeholder or hide the image
+            e.currentTarget.style.display = 'none';
+          }}
+          onLoad={() => {
+            console.log(`Successfully loaded image: ${image.src}`);
           }}
         />
       </div>
@@ -172,7 +257,7 @@ export default function OptimizedInfiniteCarousel() {
             transform: "translate3d(0, 0, 0)", // Initialize hardware acceleration
           }}
         >
-          {infiniteImages.map((image, index) => (
+          {firstRowInfinite.map((image, index) => (
             <ImageCard key={`row1-${index}`} image={image} index={index} />
           ))}
         </div>
@@ -188,7 +273,7 @@ export default function OptimizedInfiniteCarousel() {
             transform: "translate3d(0, 0, 0)",
           }}
         >
-          {infiniteImages.map((image, index) => (
+          {secondRowInfinite.map((image, index) => (
             <ImageCard key={`row2-${index}`} image={image} index={index} />
           ))}
         </div>
@@ -204,7 +289,7 @@ export default function OptimizedInfiniteCarousel() {
             transform: "translate3d(0, 0, 0)",
           }}
         >
-          {infiniteImages.map((image, index) => (
+          {thirdRowInfinite.map((image, index) => (
             <ImageCard key={`row3-${index}`} image={image} index={index} />
           ))}
         </div>

@@ -9,31 +9,31 @@ export default function ProcessSection() {
       timeEstimate: "30-45 min",
       description:
         "We start with clarity. We explore the why: goals, users, problems, edge cases. We go deep. This is where we ask better questions and kill bad ideas early.",
-      illustration: "/svgs/Image.png",
+      illustration: "/svgs/Image-1.png",
     },
     {
       number: "02",
       title: "Choose Your Package",
       timeEstimate: "24-48 hrs",
       description:
-        "We start with clarity. We explore the why: goals, users, problems, edge cases. We go deep. This is where we ask better questions and kill bad ideas early.",
-      illustration: "/svgs/Image-1.png",
+        "Once we pin down what features and specifications, we choose a package or customize one to best suit what the project needs.",
+      illustration: "/svgs/Image-2.png",
     },
     {
       number: "03",
       title: "UI & Landing Page Design",
-      timeEstimate: "1-2 weeks",
+      timeEstimate: "1 week",
       description:
         "High-fidelity UI, design system basics, and a conversion-ready landing page (copy + analytics). Output: design files + dev handoff + landing page ready to publish.",
-      illustration: "/svgs/Image-2.png",
+        illustration: "/svgs/Image-3.png",
     },
     {
       number: "04",
       title: "Launch Phase",
-      timeEstimate: "2-6 weeks",
+      timeEstimate: "2-3 weeks",
       description:
-        "Frontend + backend, integrations, QA, and launch. Weekly demos, fast feedback. Output: fully working MVP in production with monitoring and docs.",
-      illustration: "/svgs/Image-3.png",
+        "Frontend + backend, integrations, QA, and pushing to live. Weekly demos, fast feedback. Output: fully working MVP in production.",
+      illustration: "/svgs/Image-4.png",
     },
   ];
 
@@ -70,6 +70,7 @@ export default function ProcessSection() {
                       width={80}
                       height={80}
                       className="w-full h-full object-contain"
+                      quality={100}
                     />
                   </div>
                 </div>

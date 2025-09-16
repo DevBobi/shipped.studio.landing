@@ -8,6 +8,7 @@ import PricingSection from "@/components/sections/PricingSection";
 import ProcessSection from "@/components/sections/ProcessSection";
 import TeamSection from "@/components/sections/TeamSection";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
+import Web3PortfolioSection from "@/components/sections/Web3PortfolioSection";
 import WhyDifferentSection from "@/components/sections/WhyDifferentSection";
 
 export default function Home() {
@@ -32,6 +33,7 @@ export default function Home() {
         <ProcessSection />
         <PricingSection />
         <OurWorkSection />
+        <Web3PortfolioSection />
         <TestimonialsSection />
         <TeamSection />
         <FAQSection />

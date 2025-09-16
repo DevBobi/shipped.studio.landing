@@ -2,13 +2,14 @@ import {
   Zap,
   ShoppingCart,
   Wrench,
-  Image,
+  Image as ImageIcon,
   Link,
   Cloud,
   BarChart3,
   Users,
   DollarSign,
 } from "lucide-react";
+import Image from "next/image";
 
 export default function BuiltToBuildSection() {
   const leftColumnItems = [
@@ -29,7 +30,7 @@ export default function BuiltToBuildSection() {
     },
     {
       title: "Content & Media Apps",
-      icon: Image,
+      icon: ImageIcon,
       className: "w-5 h-5 sm:w-6 sm:h-6 text-icon fill-current",
     },
     {
@@ -71,7 +72,7 @@ export default function BuiltToBuildSection() {
             Built to build just about any idea
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-muted font-inter max-w-2xl sm:max-w-3xl mx-auto leading-relaxed">
-            From AI to marketplaces, we build the core features you need to test
+            From AI to marketplaces, we build both core and differentiating features you need to test
             your idea and start generating real revenue.
           </p>
         </div>
@@ -121,9 +122,11 @@ export default function BuiltToBuildSection() {
             <div className="relative">
               {/* Profile Image Circle - Fixed Mobile Size */}
               <div className="w-16 h-16 rounded-full border-4 border-purple-500 overflow-hidden">
-                <img
+                <Image
                   src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face"
                   alt="Profile"
+                  width={64}
+                  height={64}
                   className="w-full h-full object-cover"
                 />
               </div>

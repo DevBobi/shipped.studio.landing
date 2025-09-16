@@ -3,18 +3,18 @@ import { FaCheck } from "react-icons/fa";
 export default function PricingSection() {
   const pricingPlans = [
     {
-      name: "MVP Only",
-      price: "$2,199",
+      name: "Starts at just ",
+      price: "$2,499",
       description:
         "Ideal for startups and small businesses looking to quickly validate their ideas with a strong MVP foundation.",
       features: [
-        "Full MVP development in 15 days",
+        "Full MVP development in 21 days",
+        "High-quality UI design in Figma",
+        "2 rounds of revisions in UI design",
         "Integrations (Analytics, Payment)",
-        "1 month of post-launch support",
         "Mobile responsive",
-        "2 weeks development",
-        "Source code included",
-        "1 week support",
+        "Source code and Figma files included",
+        "1 month of post-launch support",
       ],
       highlighted: false,
     },
@@ -24,13 +24,15 @@ export default function PricingSection() {
       description:
         "From idea to MVP in days. Ready to impress investors and early adopters.",
       features: [
-        "Full MVP development in 15 days",
-        "Basic integrations (Analytics, Payment)",
+        "Full MVP development in 21 days",
+        "High-quality UI design in Figma",
+        "2 rounds of revisions in UI design",
         "Landing page design + development",
         "Copywriting for maximum conversion",
+        "Integrations (Analytics, Payment)",
+        "Mobile responsive",
+        "Source code and Figma files included",
         "1 month of post-launch support",
-        "Launch strategy",
-        "2 weeks support",
       ],
       highlighted: true,
     },

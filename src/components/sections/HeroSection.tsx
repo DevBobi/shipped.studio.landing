@@ -9,10 +9,12 @@ export default function HeroSection() {
   return (
     <section className="relative overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-screen sm:h-[800px] md:h-[850px] lg:h-[900px] overflow-hidden">
-        <img
+        <Image
           src="/hero bg.png"
           alt="Hero background"
-          className="w-full h-full object-cover opacity-70"
+          fill
+          className="object-cover opacity-70"
+          priority
         />
       </div>
 
@@ -29,16 +31,15 @@ export default function HeroSection() {
           >
             <span className="text-primary">Your Idea, Designed And</span>
             <br />
-            <span className="text-primary">Built In Just</span>{" "}
+            <span className="text-primary">Built In </span>{" "}
             <span className="text-white bg-gray-900 px-2 sm:px-4 py-1 sm:py-2 rounded-lg text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">
-              21 Days.
+            Just{" "}21{" "}Days.
             </span>
           </h1>
 
           {/* Subheading */}
           <p className="text-lg sm:text-xl md:text-2xl text-muted font-inter max-w-4xl mx-auto mb-12 sm:mb-16 leading-relaxed px-4 sm:px-0">
-            We Build, Launch & Grow Your SaaS In 2-3 Weeks With No Surprises.
-            From MVP To Market-Ready Product
+          We Design and Build Your SaaS Idea In 2-3 Weeks With No Surprises. We Build Everything From AI SaaS To Mobile Apps
           </p>
 
           {/* CTA Buttons */}
