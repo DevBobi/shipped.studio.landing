@@ -94,79 +94,74 @@ export default function Web3PortfolioSection() {
           </p>
         </div>
 
-        {/* Web3 Projects - Horizontal Card Layout */}
-        <div className="space-y-8 md:space-y-12 mb-12 sm:mb-16 md:mb-20">
+        {/* Web3 Projects - Responsive Card Layout */}
+        <div className="space-y-6 sm:space-y-8 md:space-y-12 mb-12 sm:mb-16 md:mb-20">
           {web3Projects.map((project) => (
             <div key={project.id} className="group">
-              {/* Horizontal Project Card */}
-              <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-white to-gray-50 border border-gray-200 hover:border-purple-300 transition-all duration-500 hover:shadow-2xl">
+              {/* Responsive Project Card */}
+              <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl bg-gradient-to-r from-white to-gray-50 border border-gray-200 hover:border-purple-300 transition-all duration-500 hover:shadow-2xl">
                 <div className="flex flex-col lg:flex-row">
                   {/* Left Side - Project Image */}
                   <div className="relative lg:w-1/2 xl:w-2/5">
-                    <div className="relative aspect-[16/10] lg:aspect-square overflow-hidden">
+                    <div className="relative aspect-[16/10] sm:aspect-[4/3] lg:aspect-square overflow-hidden">
                       <Image
                         src={project.image}
                         alt={project.title}
                         fill
                         className="object-cover group-hover:scale-110 transition-transform duration-700"
-                        sizes="(max-width: 1024px) 100vw, 50vw"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 50vw"
                       />
                       
                       {/* Gradient Overlay */}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                       
                       {/* Revenue Badge */}
-                      <div className="absolute top-6 right-6 bg-gradient-to-r from-green-500 to-green-600 text-white px-4 py-2 rounded-full text-sm font-bold shadow-xl">
+                      <div className="absolute top-3 right-3 sm:top-6 sm:right-6 bg-gradient-to-r from-green-500 to-green-600 text-white px-2 py-1 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-bold shadow-xl">
                         {project.revenue}
                       </div>
 
                       {/* Category Badge */}
-                      <div className="absolute top-6 left-6 bg-gradient-to-r from-purple-500 to-purple-600 text-white px-4 py-2 rounded-full text-sm font-bold shadow-xl">
+                      <div className="absolute top-3 left-3 sm:top-6 sm:left-6 bg-gradient-to-r from-purple-500 to-purple-600 text-white px-2 py-1 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-bold shadow-xl">
                         {project.category}
                       </div>
                     </div>
                   </div>
 
                   {/* Right Side - Project Content */}
-                  <div className="lg:w-1/2 xl:w-3/5 p-8 md:p-10 lg:p-12 flex flex-col justify-center">
+                  <div className="lg:w-1/2 xl:w-3/5 p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12 flex flex-col justify-center">
                     {/* Project Icon and Title */}
-                    <div className="flex items-center gap-4 mb-6">
-                      <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
-                        <project.icon className="w-6 h-6 text-white" />
+                    <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg flex-shrink-0">
+                        <project.icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                       </div>
-                      <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary font-dm-sans">
+                      <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-primary font-dm-sans leading-tight">
                         {project.title}
                       </h3>
                     </div>
 
                     {/* Project Description */}
-                    <p className="text-base sm:text-lg md:text-xl text-muted font-inter leading-relaxed mb-8">
+                    <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted font-inter leading-relaxed mb-6 sm:mb-8">
                       {project.description}
                     </p>
 
-                    {/* Action Buttons */}
-                    <div className="flex flex-col sm:flex-row gap-4">
+                    {/* Action Button */}
+                    <div className="flex justify-start">
                       <a
                         href={project.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-gray-800 to-gray-900 hover:from-gray-700 hover:to-gray-800 text-white px-8 py-4 rounded-xl font-inter font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                        className="inline-flex items-center justify-center gap-2 sm:gap-3 bg-gradient-to-r from-gray-800 to-gray-900 hover:from-gray-700 hover:to-gray-800 text-white px-4 py-2 sm:px-6 sm:py-3 md:px-8 md:py-4 rounded-lg sm:rounded-xl font-inter font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-sm sm:text-base"
                       >
                         <span>Visit Live Project</span>
-                        <ExternalLink className="w-5 h-5" />
+                        <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5" />
                       </a>
-                      
-                      <button className="inline-flex items-center justify-center gap-3 border-2 border-purple-500 text-purple-600 hover:bg-purple-500 hover:text-white px-8 py-4 rounded-xl font-inter font-semibold transition-all duration-300">
-                        <span>View Case Study</span>
-                        <TrendingUp className="w-5 h-5" />
-                      </button>
                     </div>
                   </div>
                 </div>
 
                 {/* Decorative Elements */}
-                <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-purple-100 to-purple-200 rounded-full opacity-20 group-hover:opacity-40 transition-opacity duration-500" />
-                <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-gradient-to-tr from-green-100 to-green-200 rounded-full opacity-20 group-hover:opacity-40 transition-opacity duration-500" />
+                <div className="absolute -top-2 -right-2 sm:-top-4 sm:-right-4 w-16 h-16 sm:w-24 sm:h-24 bg-gradient-to-br from-purple-100 to-purple-200 rounded-full opacity-20 group-hover:opacity-40 transition-opacity duration-500" />
+                <div className="absolute -bottom-2 -left-2 sm:-bottom-4 sm:-left-4 w-20 h-20 sm:w-32 sm:h-32 bg-gradient-to-tr from-green-100 to-green-200 rounded-full opacity-20 group-hover:opacity-40 transition-opacity duration-500" />
               </div>
             </div>
           ))}
