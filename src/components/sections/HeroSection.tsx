@@ -62,8 +62,7 @@ export default function HeroSection() {
           </div>
 
           {/* Recent Work Section */}
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-8 px-4 sm:px-0">
-            {/* Doodles */}
+          {/* <div className="flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-8 px-4 sm:px-0">
             <div className="flex items-center gap-3 text-muted font-inter text-sm">
               <Image
                 src="/hero-doodles.png"
@@ -73,7 +72,7 @@ export default function HeroSection() {
                 className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 lg:w-56 xl:w-64 object-contain opacity-80"
               />
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
 
