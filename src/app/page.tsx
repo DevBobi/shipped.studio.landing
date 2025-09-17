@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <main className="min-h-screen relative bg-gray-50">
       {/* Global Noise Texture Overlay */}
-      <div className="fixed inset-0 opacity-40 pointer-events-none z-0">
+      <div className="fixed inset-0 opacity-10 pointer-events-none z-0">
         <div
           className="absolute inset-0"
           style={{

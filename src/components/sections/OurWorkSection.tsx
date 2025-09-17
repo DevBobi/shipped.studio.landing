@@ -112,7 +112,7 @@ export default function OurWorkSection() {
           {displayedProjects.map((project) => (
             <div key={project.id} className="group">
               {/* Project Image */}
-              <div className="relative mb-4 overflow-hidden rounded-lg aspect-[4/3]">
+              <div className="relative mb-4 overflow-hidden rounded-2xl aspect-[4/3] ">
                 <Image
                   src={project.image}
                   alt={project.title}
@@ -136,7 +136,7 @@ export default function OurWorkSection() {
                   {project.description.length > 120 && (
                     <button
                       onClick={() => toggleDescription(project.id)}
-                      className="text-primary hover:text-gray-600 font-medium mt-2 transition-colors duration-200 text-sm"
+                      className="text-purple hover:text-purple-dark font-medium mt-2 transition-colors duration-200 text-sm"
                     >
                       {expandedDescriptions.has(project.id)
                         ? "See Less"
@@ -153,7 +153,7 @@ export default function OurWorkSection() {
         <div className="text-center">
           <button
             onClick={() => setShowAll(!showAll)}
-            className="bg-primary text-white px-8 py-3 rounded-full font-inter font-semibold hover:bg-gray-700 transition-colors duration-300"
+            className="bg-purple text-white px-8 py-3 rounded-full font-inter font-semibold hover:bg-purple-dark transition-colors duration-300 shadow-lg hover:shadow-xl"
           >
             {showAll ? "Show Less" : "View All"}
           </button>

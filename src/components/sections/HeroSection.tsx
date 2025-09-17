@@ -4,11 +4,12 @@ import { FaArrowRight } from "react-icons/fa";
 import InfiniteCarousel from "@/components/ui/InfiniteCarousel";
 import Navbar from "@/components/ui/Navbar";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function HeroSection() {
   return (
-    <section className="relative overflow-hidden">
-      <div className="absolute top-0 left-0 right-0 h-screen sm:h-[800px] md:h-[850px] lg:h-[900px] overflow-hidden">
+    <section className="relative overflow-hidden backdrop-blur-sm">
+      {/* <div className="absolute -z-10 top-0 left-0 right-0 h-screen sm:h-[800px] md:h-[850px] lg:h-[900px] overflow-hidden">
         <Image
           src="/hero bg.png"
           alt="Hero background"
@@ -16,12 +17,12 @@ export default function HeroSection() {
           className="object-cover opacity-70"
           priority
         />
-      </div>
+      </div> */}
 
       <Navbar />
 
       {/* Hero Content */}
-      <div className="relative z-10 px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 md:pt-24 pb-12 sm:pb-16 md:pb-20 min-h-screen sm:min-h-0 flex items-center">
+      <div className="relative  z-10 px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 md:pt-24 pb-12 sm:pb-16 md:pb-20 min-h-screen sm:min-h-0 flex items-center">
         <div className="max-w-7xl mx-auto text-center">
           <h1
             className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl  font-dm-sans leading-tight mb-6 sm:mb-8 px-2 sm:px-0 tracking-tighter"
@@ -32,7 +33,7 @@ export default function HeroSection() {
             <span className="text-primary">Your Idea, Designed And</span>
             <br />
             <span className="text-primary">Built In </span>{" "}
-            <span className="text-white bg-primary px-2 sm:px-4 py-1 sm:py-2 rounded-lg text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">
+            <span className="text-white bg-purple px-2 sm:px-4 py-1 sm:py-2 rounded-lg text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">
               Just 21 Days.
             </span>
           </h1>
@@ -45,21 +46,19 @@ export default function HeroSection() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mb-16 sm:mb-20 px-4 sm:px-0">
-            <button className="w-full sm:w-auto bg-primary text-white px-8 py-4 rounded-full font-inter font-semibold text-lg transition-all duration-300 hover:scale-105 flex items-center justify-center gap-3 shadow-xl hover:shadow-2xl cursor-pointer">
+            <Link
+              href="/#book-a-call"
+              className="w-full sm:w-auto bg-purple text-white px-8 py-4 rounded-full font-inter font-semibold text-lg transition-all duration-300 hover:scale-105 flex items-center justify-center gap-3 cursor-pointer"
+            >
               Book a Call
               <FaArrowRight className="w-5 h-5" />
-            </button>
-            <button
-              onClick={() => {
-                const element = document.getElementById("our-work");
-                if (element) {
-                  element.scrollIntoView({ behavior: "smooth" });
-                }
-              }}
-              className="w-full sm:w-auto text-primary px-8 py-3.5 rounded-full font-inter font-semibold text-lg hover:text-gray-700 transition-all duration-300 hover:scale-105 flex items-center justify-center gap-3 cursor-pointer border-2 border-gray-900 hover:border-gray-700"
+            </Link>
+            <Link
+              href="/#our-work"
+              className="w-full bg-white sm:w-auto text-purple px-8 py-3.5 rounded-full font-inter font-semibold text-lg hover:text-purple-dark transition-all duration-300 hover:scale-105 flex items-center justify-center gap-3 cursor-pointer border-2 border-purple hover:border-purple-dark"
             >
               View Works
-            </button>
+            </Link>
           </div>
 
           {/* Recent Work Section */}

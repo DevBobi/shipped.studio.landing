@@ -49,8 +49,8 @@ export default function FAQSection() {
             Frequently Asked Questions
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-muted font-inter max-w-3xl mx-auto leading-relaxed px-2 sm:px-0">
-            Got questions? We&apos;ve got answers. Here are the most common questions
-            we receive about our services and process.
+            Got questions? We&apos;ve got answers. Here are the most common
+            questions we receive about our services and process.
           </p>
         </div>
 
@@ -59,7 +59,7 @@ export default function FAQSection() {
           {faqs.map((faq, index) => (
             <Disclosure key={index}>
               {({ open }) => (
-                <div className="bg-white/80 rounded-xl sm:rounded-2xl overflow-hidden border border-gray-200/50 shadow-sm">
+                <div className="bg-white/80 rounded-2xl overflow-hidden border border-gray-200/50 shadow-lg hover:shadow-xl transition-all duration-300">
                   <Disclosure.Button className="w-full px-4 sm:px-6 md:px-8 py-4 sm:py-6  text-left flex items-center justify-between hover:bg-gray-50/80 transition-colors">
                     <span className="text-sm sm:text-base md:text-lg lg:text-xl font-medium text-primary font-dm-sans pr-2 sm:pr-4 leading-tight">
                       {faq.question}

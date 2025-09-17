@@ -205,7 +205,7 @@ export default function BuiltToBuildSection() {
                 >
                   <item.icon className={item.className} />
                 </motion.div>
-                <span className="text-base sm:text-lg md:text-xl text-secondary font-inter group-hover:text-primary transition-colors duration-200">
+                <span className="text-base sm:text-lg md:text-xl text-secondary font-inter group-hover:text-purple transition-colors duration-200">
                   {item.title}
                 </span>
               </motion.div>
@@ -235,7 +235,7 @@ export default function BuiltToBuildSection() {
                 >
                   <item.icon className={item.className} />
                 </motion.div>
-                <span className="text-base sm:text-lg md:text-xl text-secondary font-inter group-hover:text-primary transition-colors duration-200">
+                <span className="text-base sm:text-lg md:text-xl text-secondary font-inter group-hover:text-purple transition-colors duration-200">
                   {item.title}
                 </span>
               </motion.div>
@@ -261,10 +261,10 @@ export default function BuiltToBuildSection() {
             <div className="relative">
               {/* Profile Image Circle - Fixed Mobile Size */}
               <motion.div
-                className="w-16 h-16 rounded-full border-4 border-purple-500 overflow-hidden"
+                className="w-16 h-16 rounded-full border-4 border-purple overflow-hidden"
                 whileHover={{
                   scale: 1.1,
-                  borderColor: "#8b5cf6",
+                  borderColor: "var(--color-purple)",
                   transition: { duration: 0.3, ease: "easeOut" },
                 }}
               >
@@ -278,12 +278,12 @@ export default function BuiltToBuildSection() {
               </motion.div>
               {/* "You" Circle - Overlapping and Same Size, Fixed Mobile Size */}
               <motion.div
-                className="absolute -right-10 -bottom-0 w-16 h-16 bg-white rounded-full border-4 border-purple-500 flex items-center justify-center"
+                className="absolute -right-10 -bottom-0 w-16 h-16 bg-white rounded-full border-4 border-purple flex items-center justify-center"
                 initial={{ rotate: -12 }}
                 whileHover={{
                   rotate: 0,
                   scale: 1.1,
-                  borderColor: "#8b5cf6",
+                  borderColor: "var(--color-purple)",
                   transition: { duration: 0.3, ease: "easeOut" },
                 }}
               >
@@ -296,7 +296,7 @@ export default function BuiltToBuildSection() {
 
           {/* Book a Call Button */}
           <motion.button
-            className="bg-primary sm:w-auto rounded-full text-white px-6 sm:px-6 md:px-8 lg:px-10 py-4 sm:py-3 md:py-4 lg:py-5 font-inter font-semibold hover:bg-gray-700 transition-colors duration-300 shadow-lg hover:shadow-2xl cursor-pointer text-base sm:text-lg md:text-xl"
+            className="bg-purple sm:w-auto rounded-full text-white px-6 sm:px-6 md:px-8 lg:px-10 py-4 sm:py-3 md:py-4 lg:py-5 font-inter font-semibold hover:bg-purple-dark transition-colors duration-300 shadow-lg hover:shadow-xl cursor-pointer text-base sm:text-lg md:text-xl"
             variants={buttonVariants}
             whileHover="hover"
             whileTap="tap"

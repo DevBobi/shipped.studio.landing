@@ -46,7 +46,7 @@ export default function PricingSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-12 sm:mb-16 md:mb-20">
-          <div className="text-xs sm:text-sm font-semibold text-purple-dark uppercase tracking-wider mb-3 sm:mb-4">
+          <div className="text-xs sm:text-sm font-semibold text-purple uppercase tracking-wider mb-3 sm:mb-4">
             Simple Pricing
           </div>
           <h2 className="tracking-tighter text-4xl md:text-5xl font-bold text-primary font-dm-sans mb-6">
@@ -63,16 +63,16 @@ export default function PricingSection() {
           {pricingPlans.map((plan, index) => (
             <div
               key={index}
-              className={`relative rounded-[20px] sm:rounded-[25px] lg:rounded-[35px] shadow-sm transition-all duration-300 overflow-hidden ${
+              className={`relative rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden ${
                 plan.highlighted
-                  ? "bg-blue-500 text-white"
+                  ? "bg-purple text-white"
                   : "bg-white text-primary"
               }`}
             >
               {/* Plan Header with Background */}
               <div
                 className={`p-6 sm:p-7 lg:p-8 ${
-                  plan.highlighted ? "bg-blue-600" : "bg-white"
+                  plan.highlighted ? "bg-purple-dark" : "bg-white"
                 }`}
               >
                 <h3
@@ -118,8 +118,8 @@ export default function PricingSection() {
                       <div
                         className={`w-4 h-4 sm:w-5 sm:h-5 flex items-center justify-center flex-shrink-0 mt-0.5 ${
                           plan.highlighted
-                            ? "bg-blue-500 text-white rounded-full"
-                            : "text-blue"
+                            ? "bg-purple text-white rounded-full"
+                            : "text-purple"
                         }`}
                       >
                         <FaCheck className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
@@ -137,10 +137,10 @@ export default function PricingSection() {
 
                 {/* CTA Button */}
                 <button
-                  className={`w-full py-3 sm:py-4 rounded-full font-inter font-semibold text-sm sm:text-base transition-all duration-300 ${
+                  className={`w-full py-3 sm:py-4 rounded-full font-inter font-semibold text-sm sm:text-base transition-all duration-300 shadow-lg hover:shadow-xl ${
                     plan.highlighted
-                      ? "bg-white text-blue hover:bg-gray-100"
-                      : "bg-blue-500 text-white hover:bg-blue-600"
+                      ? "bg-white text-purple hover:bg-gray-100"
+                      : "bg-purple text-white hover:bg-purple-dark"
                   }`}
                 >
                   Book a call

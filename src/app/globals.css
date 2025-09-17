@@ -129,3 +129,7 @@ body {
     transform: translateX(0);
   }
 }
+
+.rounded-2xl {
+  border-radius: 32px !important;
+}

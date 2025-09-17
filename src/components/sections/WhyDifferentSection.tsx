@@ -82,13 +82,13 @@ export default function WhyDifferentSection() {
           variants={containerVariants}
         >
           <motion.h2
-            className="text-4xl md:text-6xl font-bold font-dm-sans mb-6 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent"
+            className="text-4xl md:text-6xl font-bold font-dm-sans mb-6 text-primary"
             variants={itemVariants}
           >
             Why we&apos;re different
           </motion.h2>
           <motion.p
-            className="text-xl text-gray-600 max-w-3xl mx-auto font-inter"
+            className="text-xl text-muted max-w-3xl mx-auto font-inter"
             variants={itemVariants}
           >
             See how we stack up against the alternatives and why top startups
@@ -98,7 +98,7 @@ export default function WhyDifferentSection() {
 
         {/* Comparison Table */}
         <motion.div
-          className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-[32px] p-0 overflow-hidden w-full mx-auto shadow-2xl border border-gray-700 backdrop-blur-sm"
+          className="bg-gradient-to-br from-primary via-secondary to-primary rounded-3xl p-0 overflow-hidden w-full mx-auto shadow-xl border border-secondary backdrop-blur-sm"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
@@ -109,22 +109,22 @@ export default function WhyDifferentSection() {
           {/* Desktop Table */}
           <div className="hidden md:block">
             {/* Header Row */}
-            <div className="grid grid-cols-5 bg-gradient-to-r from-gray-800 to-gray-700">
-              <div className="p-8 text-gray-300 font-semibold font-dm-sans mt-2 text-lg flex items-center justify-center">
+            <div className="grid grid-cols-5 bg-gradient-to-r from-secondary to-muted">
+              <div className="p-8 text-white font-semibold font-dm-sans mt-2 text-lg flex items-center justify-center">
                 Category
               </div>
-              <div className="bg-gradient-to-br from-blue-100 via-white to-blue-50 p-8 mt-2 text-gray-900 font-bold text-center font-dm-sans rounded-t-[50px] shadow-lg border-2 border-blue-200">
-                <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent text-xl">
+              <div className="bg-gradient-to-br from-blue-100 via-white to-purple-50 p-8 mt-2 text-primary font-bold text-center font-dm-sans rounded-t-3xl shadow-lg border-2 border-purple">
+                <span className="bg-gradient-to-r from-blue to-purple bg-clip-text text-transparent text-xl">
                   🚀 Shipped Studio
                 </span>
               </div>
-              <div className="p-8 text-gray-300 font-semibold text-center font-dm-sans mt-2 text-lg flex items-center justify-center">
+              <div className="p-8 text-white font-semibold text-center font-dm-sans mt-2 text-lg flex items-center justify-center">
                 Freelancer
               </div>
-              <div className="p-8 text-gray-300 font-semibold text-center font-dm-sans mt-2 text-lg flex items-center justify-center">
+              <div className="p-8 text-white font-semibold text-center font-dm-sans mt-2 text-lg flex items-center justify-center">
                 Traditional Agency
               </div>
-              <div className="p-8 text-gray-300 font-semibold text-center font-dm-sans mt-2 text-lg flex items-center justify-center">
+              <div className="p-8 text-white font-semibold text-center font-dm-sans mt-2 text-lg flex items-center justify-center">
                 In-House
               </div>
             </div>
@@ -133,7 +133,7 @@ export default function WhyDifferentSection() {
             {comparisonData.map((row, index) => (
               <motion.div
                 key={index}
-                className="grid grid-cols-5 border-t border-gray-600/50 hover:bg-gray-700/30 transition-colors duration-300"
+                className="grid grid-cols-5 border-t border-muted/50 hover:bg-secondary/30 transition-colors duration-300"
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
@@ -143,17 +143,17 @@ export default function WhyDifferentSection() {
                   ease: [0.25, 0.46, 0.45, 0.94],
                 }}
               >
-                <div className="p-8 text-gray-200 font-semibold font-inter text-lg">
+                <div className="p-8 text-white font-semibold font-inter text-lg">
                   {row.category}
                 </div>
                 <div
-                  className={`bg-gradient-to-br from-blue-100 via-white to-blue-50 p-8 flex items-center border-x-2 border-blue-200 ${
+                  className={`bg-gradient-to-br from-blue-100 via-white to-purple-50 p-8 flex items-center border-x-2 border-purple ${
                     index === comparisonData.length - 1
-                      ? "rounded-b-[50px] mb-2"
+                      ? "rounded-b-3xl mb-2"
                       : ""
                   }`}
                 >
-                  <div className="flex items-center gap-4 font-bold text-gray-900">
+                  <div className="flex items-center gap-4 font-bold text-primary">
                     <div className="w-8 h-8 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center flex-shrink-0 shadow-lg">
                       <FaCheck className="w-4 h-4 text-white" />
                     </div>
@@ -164,12 +164,10 @@ export default function WhyDifferentSection() {
                 </div>
                 <div
                   className={`p-8 flex items-center ${
-                    index === comparisonData.length - 1
-                      ? "rounded-b-[32px]"
-                      : ""
+                    index === comparisonData.length - 1 ? "rounded-b-3xl" : ""
                   }`}
                 >
-                  <div className="flex items-center gap-4 text-gray-300">
+                  <div className="flex items-center gap-4 text-white">
                     {row.freelancer.has ? (
                       <div className="w-8 h-8 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center flex-shrink-0 shadow-md">
                         <FaCheck className="w-4 h-4 text-white" />
@@ -186,12 +184,10 @@ export default function WhyDifferentSection() {
                 </div>
                 <div
                   className={`p-8 flex items-center ${
-                    index === comparisonData.length - 1
-                      ? "rounded-b-[32px]"
-                      : ""
+                    index === comparisonData.length - 1 ? "rounded-b-3xl" : ""
                   }`}
                 >
-                  <div className="flex items-center gap-4 text-gray-300">
+                  <div className="flex items-center gap-4 text-white">
                     {row.traditionalAgency.has ? (
                       <div className="w-8 h-8 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center flex-shrink-0 shadow-md">
                         <FaCheck className="w-4 h-4 text-white" />
@@ -208,12 +204,10 @@ export default function WhyDifferentSection() {
                 </div>
                 <div
                   className={`p-8 flex items-center ${
-                    index === comparisonData.length - 1
-                      ? "rounded-b-[32px]"
-                      : ""
+                    index === comparisonData.length - 1 ? "rounded-b-3xl" : ""
                   }`}
                 >
-                  <div className="flex items-center gap-4 text-gray-300">
+                  <div className="flex items-center gap-4 text-white">
                     {row.inHouse.has ? (
                       <div className="w-8 h-8 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center flex-shrink-0 shadow-md">
                         <FaCheck className="w-4 h-4 text-white" />
@@ -236,22 +230,22 @@ export default function WhyDifferentSection() {
           <div className="md:hidden overflow-x-auto">
             <div className="min-w-[900px]">
               {/* Header Row */}
-              <div className="grid grid-cols-5 bg-gradient-to-r from-gray-800 to-gray-700">
-                <div className="p-6 text-gray-300 font-semibold font-dm-sans mt-2">
+              <div className="grid grid-cols-5 bg-gradient-to-r from-secondary to-muted">
+                <div className="p-6 text-white font-semibold font-dm-sans mt-2">
                   Category
                 </div>
-                <div className="bg-gradient-to-br from-blue-100 via-white to-blue-50 p-6 mt-2 text-gray-900 font-bold text-center font-dm-sans rounded-t-[24px] shadow-lg border-2 border-blue-200">
-                  <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                <div className="bg-gradient-to-br from-blue-100 via-white to-purple-50 p-6 mt-2 text-primary font-bold text-center font-dm-sans rounded-t-2xl shadow-lg border-2 border-purple">
+                  <span className="bg-gradient-to-r from-blue to-purple bg-clip-text text-transparent">
                     🚀 Shipped Studio
                   </span>
                 </div>
-                <div className="p-6 text-gray-300 font-semibold text-center font-dm-sans mt-2">
+                <div className="p-6 text-white font-semibold text-center font-dm-sans mt-2">
                   Freelancer
                 </div>
-                <div className="p-6 text-gray-300 font-semibold text-center font-dm-sans mt-2">
+                <div className="p-6 text-white font-semibold text-center font-dm-sans mt-2">
                   Traditional Agency
                 </div>
-                <div className="p-6 text-gray-300 font-semibold text-center font-dm-sans mt-2">
+                <div className="p-6 text-white font-semibold text-center font-dm-sans mt-2">
                   In-House
                 </div>
               </div>
@@ -270,17 +264,17 @@ export default function WhyDifferentSection() {
                     ease: [0.25, 0.46, 0.45, 0.94],
                   }}
                 >
-                  <div className="p-6 text-gray-200 font-semibold font-inter">
+                  <div className="p-6 text-white font-semibold font-inter">
                     {row.category}
                   </div>
                   <div
-                    className={`bg-gradient-to-br from-blue-100 via-white to-blue-50 p-6 flex items-center border-x-2 border-blue-200 ${
+                    className={`bg-gradient-to-br from-blue-100 via-white to-purple-50 p-6 flex items-center border-x-2 border-purple ${
                       index === comparisonData.length - 1
-                        ? "rounded-b-[24px] mb-2"
+                        ? "rounded-b-2xl mb-2"
                         : ""
                     }`}
                   >
-                    <div className="flex items-center gap-3 font-bold text-gray-900">
+                    <div className="flex items-center gap-3 font-bold text-primary">
                       <div className="w-6 h-6 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center flex-shrink-0 shadow-lg">
                         <FaCheck className="w-3 h-3 text-white" />
                       </div>
@@ -291,12 +285,10 @@ export default function WhyDifferentSection() {
                   </div>
                   <div
                     className={`p-6 flex items-center ${
-                      index === comparisonData.length - 1
-                        ? "rounded-b-[24px]"
-                        : ""
+                      index === comparisonData.length - 1 ? "rounded-b-2xl" : ""
                     }`}
                   >
-                    <div className="flex items-center gap-3 text-gray-300">
+                    <div className="flex items-center gap-3 text-white">
                       {row.freelancer.has ? (
                         <div className="w-6 h-6 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center flex-shrink-0 shadow-md">
                           <FaCheck className="w-3 h-3 text-white" />
@@ -313,12 +305,10 @@ export default function WhyDifferentSection() {
                   </div>
                   <div
                     className={`p-6 flex items-center ${
-                      index === comparisonData.length - 1
-                        ? "rounded-b-[24px]"
-                        : ""
+                      index === comparisonData.length - 1 ? "rounded-b-2xl" : ""
                     }`}
                   >
-                    <div className="flex items-center gap-3 text-gray-300">
+                    <div className="flex items-center gap-3 text-white">
                       {row.traditionalAgency.has ? (
                         <div className="w-6 h-6 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center flex-shrink-0 shadow-md">
                           <FaCheck className="w-3 h-3 text-white" />
@@ -335,12 +325,10 @@ export default function WhyDifferentSection() {
                   </div>
                   <div
                     className={`p-6 flex items-center ${
-                      index === comparisonData.length - 1
-                        ? "rounded-b-[24px]"
-                        : ""
+                      index === comparisonData.length - 1 ? "rounded-b-2xl" : ""
                     }`}
                   >
-                    <div className="flex items-center gap-3 text-gray-300">
+                    <div className="flex items-center gap-3 text-white">
                       {row.inHouse.has ? (
                         <div className="w-6 h-6 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center flex-shrink-0 shadow-md">
                           <FaCheck className="w-3 h-3 text-white" />

@@ -36,7 +36,7 @@ export default function TeamSection() {
           {teamMembers.map((member, index) => (
             <div
               key={index}
-              className="relative rounded-2xl overflow-hidden shadow-sm"
+              className="relative rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
             >
               {/* Team Member Image - Full Card */}
               <div className="w-full h-80 relative">
@@ -67,7 +67,7 @@ export default function TeamSection() {
                     href="#"
                     className="w-8 h-8 rounded-full flex items-center justify-center hover:bg-blue-600 hover:scale-110 transition-all duration-300 group"
                   >
-                    <FaLinkedin className="w-4 h-4 text-blue-dark group-hover:text-white transition-colors duration-300" />
+                    <FaLinkedin className="w-4 h-4 text-blue group-hover:text-white transition-colors duration-300" />
                   </a>
                 </div>
               </div>

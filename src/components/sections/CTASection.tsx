@@ -32,7 +32,7 @@ export default function CTASection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="bg-gradient-to-r from-white/90 via-purple-50/90 to-blue-50/90 backdrop-blur-sm border border-purple/20 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 lg:p-16 relative overflow-hidden shadow-2xl"
+          className="bg-gradient-to-r from-white/90 via-purple-50/90 to-blue-50/90 backdrop-blur-sm border border-purple/20 rounded-3xl p-6 sm:p-8 md:p-12 lg:p-16 relative overflow-hidden shadow-xl"
         >
           {/* Decorative elements */}
           <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-purple via-blue to-purple"></div>
@@ -85,17 +85,17 @@ export default function CTASection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 mb-8 sm:mb-10"
+              className="flex flex-wrap items-center justify-center gap-4 sm:gap-8 mb-8 sm:mb-10"
             >
               {benefits.map((benefit, index) => (
                 <div
                   key={index}
-                  className="flex items-center gap-3 bg-white/60 backdrop-blur-sm px-4 py-3 rounded-full border border-gray-200/50 shadow-sm"
+                  className="flex items-center gap-2 sm:gap-3 bg-white/60 backdrop-blur-sm px-3 sm:px-4 py-2 sm:py-3 rounded-full border border-gray-200/50 shadow-lg"
                 >
-                  <div className="p-2 bg-purple/10 rounded-full">
-                    <benefit.icon className="w-4 h-4 text-purple" />
+                  <div className="p-1.5 sm:p-2 bg-purple/10 rounded-full">
+                    <benefit.icon className="w-3 h-3 sm:w-4 sm:h-4 text-purple" />
                   </div>
-                  <span className="text-sm font-semibold text-primary font-inter">
+                  <span className="text-xs sm:text-sm whitespace-nowrap font-semibold text-primary font-inter">
                     {benefit.text}
                   </span>
                 </div>
@@ -110,14 +110,12 @@ export default function CTASection() {
               transition={{ duration: 0.6, delay: 0.6 }}
               className="flex flex-col sm:flex-row gap-4 justify-center items-center"
             >
-              <button className="group bg-gradient-to-r from-purple to-purple-dark text-white px-8 py-4 rounded-full font-inter font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl flex items-center gap-3 w-full sm:w-auto">
+              <button className="group justify-center bg-gradient-to-r from-purple to-purple-dark text-white px-8 py-4 rounded-full font-inter font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl flex items-center gap-3 w-full sm:w-auto shadow-lg">
                 Book a Strategy Call
-                <FaArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
               </button>
 
-              <button className="group text-purple px-8 py-4 rounded-full font-inter font-semibold text-lg hover:text-purple-dark transition-all duration-300 hover:scale-105 flex items-center gap-3 w-full sm:w-auto border-2 border-purple hover:border-purple-dark hover:bg-purple/5">
+              <button className="group justify-center text-purple px-8 py-4 rounded-full font-inter font-semibold text-lg hover:text-purple-dark transition-all duration-300 hover:scale-105 flex items-center gap-3 w-full sm:w-auto border-2 border-purple hover:border-purple-dark hover:bg-purple/5 shadow-lg hover:shadow-xl">
                 View Our Work
-                <FaArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
               </button>
             </motion.div>
 
