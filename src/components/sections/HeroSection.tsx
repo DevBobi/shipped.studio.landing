@@ -22,7 +22,7 @@ export default function HeroSection() {
       <Navbar />
 
       {/* Hero Content */}
-      <div className="relative  z-10 px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 md:pt-24 pb-12 sm:pb-16 md:pb-20 min-h-screen sm:min-h-0 flex items-center">
+      <div className="relative z-10 px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 md:pt-24 sm:min-h-0 flex items-center">
         <div className="max-w-7xl mx-auto text-center">
           <h1
             className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl  font-dm-sans leading-tight mb-6 sm:mb-8 px-2 sm:px-0 tracking-tighter"

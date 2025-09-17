@@ -17,7 +17,7 @@ export default function Navbar() {
         <div className="w-full max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-3 items-center">
           {/* Logo - Left Column */}
           <div className="text-left">
-            <h1 className="text-gray-900 font-bold text-lg sm:text-xl md:text-2xl whitespace-nowrap">
+            <h1 className="text-primary font-bold text-lg sm:text-xl md:text-2xl whitespace-nowrap">
               <span className="sm:inline">Shipped</span>
               <span className="hidden lg:inline"> Studio</span>
             </h1>
@@ -47,7 +47,7 @@ export default function Navbar() {
 
           {/* CTA Button and Mobile Nav - Right Column */}
           <div className="flex items-center justify-end gap-2 sm:gap-4">
-            <button className="hidden md:block bg-gray-900 text-white px-6 py-3 rounded-full font-inter font-medium transition-colors">
+            <button className="hidden md:block bg-purple text-white px-6 py-3 rounded-full font-inter font-medium transition-colors">
               Book a Call
             </button>
             <div className="md:hidden">
