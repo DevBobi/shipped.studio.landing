@@ -1,16 +1,16 @@
-'use client'
+"use client";
 
-import { useState } from 'react'
-import { FaBars, FaTimes } from 'react-icons/fa'
+import { useState } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 export default function MobileNav() {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
 
   const navigationLinks = [
-    { name: 'How it works', href: '#how-it-works' },
-    { name: 'Pricing', href: '#pricing' },
-    { name: 'FAQs', href: '#faqs' }
-  ]
+    { name: "How it works", href: "#how-it-works" },
+    { name: "Pricing", href: "#pricing" },
+    { name: "FAQs", href: "#faqs" },
+  ];
 
   return (
     <div className="md:hidden">
@@ -26,11 +26,11 @@ export default function MobileNav() {
       {isOpen && (
         <>
           {/* Full Screen Backdrop */}
-          <div 
+          <div
             className="fixed inset-0 bg-black/50 z-[9998]"
             onClick={() => setIsOpen(false)}
           />
-          
+
           {/* Mobile Menu */}
           <div className="fixed inset-0 z-[9999] bg-white">
             <div className="flex flex-col h-full">
@@ -46,7 +46,7 @@ export default function MobileNav() {
                   <FaTimes size={24} />
                 </button>
               </div>
-              
+
               {/* Navigation Links */}
               <div className="flex-1 px-6 py-8 space-y-6">
                 {navigationLinks.map((link, index) => (
@@ -60,10 +60,10 @@ export default function MobileNav() {
                   </a>
                 ))}
               </div>
-              
+
               {/* CTA Button */}
               <div className="px-6 py-6 border-t border-gray-200">
-                <button className="w-full bg-gray-900 text-white px-6 py-4 rounded-full font-inter font-semibold text-lg hover:bg-gray-800 transition-colors">
+                <button className="w-full bg-primary text-white px-6 py-4 rounded-full font-inter font-semibold text-lg transition-colors">
                   Book a Call
                 </button>
               </div>
@@ -72,5 +72,5 @@ export default function MobileNav() {
         </>
       )}
     </div>
-  )
+  );
 }

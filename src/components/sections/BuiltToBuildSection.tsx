@@ -1,3 +1,5 @@
+// @ts-nocheck
+"use client";
 import {
   Zap,
   ShoppingCart,
@@ -10,6 +12,7 @@ import {
   DollarSign,
 } from "lucide-react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function BuiltToBuildSection() {
   const leftColumnItems = [
@@ -63,65 +66,208 @@ export default function BuiltToBuildSection() {
     },
   ];
 
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const headerVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: [0.6, -0.05, 0.01, 0.99],
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, x: -20 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.6,
+        ease: [0.6, -0.05, 0.01, 0.99],
+      },
+    },
+  };
+
+  const rightItemVariants = {
+    hidden: { opacity: 0, x: 20 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.6,
+        ease: [0.6, -0.05, 0.01, 0.99],
+      },
+    },
+  };
+
+  const profileVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 0.8,
+        ease: [0.6, -0.05, 0.01, 0.99],
+        delay: 0.5,
+      },
+    },
+  };
+
+  const buttonVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: [0.6, -0.05, 0.01, 0.99],
+        delay: 0.6,
+      },
+    },
+    hover: {
+      scale: 1.05,
+      transition: {
+        duration: 0.2,
+        ease: "easeInOut",
+      },
+    },
+    tap: {
+      scale: 0.95,
+    },
+  };
+
   return (
     <section className="py-12 sm:py-16 md:py-20 lg:py-24 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <motion.div
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+      >
         {/* Section Header */}
-        <div className="text-center mb-12 sm:mb-16 md:mb-20">
-          <h2 className="tracking-tighter text-4xl md:text-5xl font-bold text-primary font-dm-sans mb-6">
+        <motion.div
+          className="text-center mb-12 sm:mb-16 md:mb-20"
+          variants={headerVariants}
+        >
+          <motion.h2
+            className="tracking-tighter text-4xl md:text-5xl font-bold text-primary font-dm-sans mb-6"
+            variants={headerVariants}
+          >
             Built to build just about any idea
-          </h2>
-          <p className="text-base sm:text-lg md:text-xl text-muted font-inter max-w-2xl sm:max-w-3xl mx-auto leading-relaxed">
-            From AI to marketplaces, we build both core and differentiating features you need to test
-            your idea and start generating real revenue.
-          </p>
-        </div>
+          </motion.h2>
+          <motion.p
+            className="text-base sm:text-lg md:text-xl text-muted font-inter max-w-2xl sm:max-w-3xl mx-auto leading-relaxed"
+            variants={headerVariants}
+          >
+            From AI to marketplaces, we build both core and differentiating
+            features you need to test your idea and start generating real
+            revenue.
+          </motion.p>
+        </motion.div>
 
         {/* Two Column Layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 md:gap-16 mb-12 sm:mb-16 md:mb-20">
           {/* Left Column */}
-          <div className="space-y-2 sm:space-y-3 md:space-y-4 lg:space-y-6">
+          <motion.div
+            className="space-y-2 sm:space-y-3 md:space-y-4 lg:space-y-6"
+            variants={containerVariants}
+          >
             {leftColumnItems.map((item, index) => (
-              <div
+              <motion.div
                 key={index}
-                className="flex items-center gap-2 sm:gap-3 md:gap-4 py-2 sm:py-3 md:py-4 border-b border-gray-200"
+                className="flex items-center gap-2 sm:gap-3 md:gap-4 py-2 sm:py-3 md:py-4 border-b border-gray-200 group cursor-pointer"
+                variants={itemVariants}
+                whileHover={{
+                  x: 8,
+                  transition: { duration: 0.2, ease: "easeOut" },
+                }}
               >
-                <item.icon className={item.className} />
-                <span className="text-base sm:text-lg md:text-xl text-secondary font-inter">
+                <motion.div
+                  whileHover={{
+                    rotate: 360,
+                    transition: { duration: 0.5, ease: "easeInOut" },
+                  }}
+                >
+                  <item.icon className={item.className} />
+                </motion.div>
+                <span className="text-base sm:text-lg md:text-xl text-secondary font-inter group-hover:text-primary transition-colors duration-200">
                   {item.title}
                 </span>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
 
           {/* Right Column */}
-          <div className="space-y-2 sm:space-y-3 md:space-y-4 lg:space-y-6">
+          <motion.div
+            className="space-y-2 sm:space-y-3 md:space-y-4 lg:space-y-6"
+            variants={containerVariants}
+          >
             {rightColumnItems.map((item, index) => (
-              <div
+              <motion.div
                 key={index}
-                className="flex items-center gap-2 sm:gap-3 md:gap-4 py-2 sm:py-3 md:py-4 border-b border-gray-200"
+                className="flex items-center gap-2 sm:gap-3 md:gap-4 py-2 sm:py-3 md:py-4 border-b border-gray-200 group cursor-pointer"
+                variants={rightItemVariants}
+                whileHover={{
+                  x: -8,
+                  transition: { duration: 0.2, ease: "easeOut" },
+                }}
               >
-                <item.icon className={item.className} />
-                <span className="text-base sm:text-lg md:text-xl text-secondary font-inter">
+                <motion.div
+                  whileHover={{
+                    rotate: 360,
+                    transition: { duration: 0.5, ease: "easeInOut" },
+                  }}
+                >
+                  <item.icon className={item.className} />
+                </motion.div>
+                <span className="text-base sm:text-lg md:text-xl text-secondary font-inter group-hover:text-primary transition-colors duration-200">
                   {item.title}
                 </span>
-              </div>
+              </motion.div>
             ))}
-            <div className="py-2 sm:py-3 md:py-4">
+            <motion.div
+              className="py-2 sm:py-3 md:py-4"
+              variants={rightItemVariants}
+            >
               <span className="text-base sm:text-lg md:text-xl text-secondary font-inter">
                 and so much more...
               </span>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
 
         {/* Bottom Section */}
         <div className="flex items-center justify-between gap-3 sm:gap-4 md:gap-6 lg:gap-8">
           {/* Profile Section */}
-          <div className="flex items-center gap-4">
+          <motion.div
+            className="flex items-center gap-4"
+            variants={profileVariants}
+          >
             <div className="relative">
               {/* Profile Image Circle - Fixed Mobile Size */}
-              <div className="w-16 h-16 rounded-full border-4 border-purple-500 overflow-hidden">
+              <motion.div
+                className="w-16 h-16 rounded-full border-4 border-purple-500 overflow-hidden"
+                whileHover={{
+                  scale: 1.1,
+                  borderColor: "#8b5cf6",
+                  transition: { duration: 0.3, ease: "easeOut" },
+                }}
+              >
                 <Image
                   src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face"
                   alt="Profile"
@@ -129,22 +275,36 @@ export default function BuiltToBuildSection() {
                   height={64}
                   className="w-full h-full object-cover"
                 />
-              </div>
+              </motion.div>
               {/* "You" Circle - Overlapping and Same Size, Fixed Mobile Size */}
-              <div className="absolute -right-10 -bottom-0 w-16 h-16 bg-white rounded-full border-4 border-purple-500 flex items-center justify-center">
-                <span className="text-base font-inter text-purple-dark font-semibold transform -rotate-12">
+              <motion.div
+                className="absolute -right-10 -bottom-0 w-16 h-16 bg-white rounded-full border-4 border-purple-500 flex items-center justify-center"
+                initial={{ rotate: -12 }}
+                whileHover={{
+                  rotate: 0,
+                  scale: 1.1,
+                  borderColor: "#8b5cf6",
+                  transition: { duration: 0.3, ease: "easeOut" },
+                }}
+              >
+                <span className="text-base font-inter text-purple-dark font-semibold">
                   You
                 </span>
-              </div>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Book a Call Button */}
-          <button className="sm:w-auto bg-gray-800 rounded-full text-white px-6 sm:px-6 md:px-8 lg:px-10 py-4 sm:py-3 md:py-4 lg:py-5 font-inter font-semibold hover:bg-gray-700 transition-colors duration-300 shadow-lg hover:shadow-2xl cursor-pointer text-base sm:text-lg md:text-xl">
+          <motion.button
+            className="bg-primary sm:w-auto rounded-full text-white px-6 sm:px-6 md:px-8 lg:px-10 py-4 sm:py-3 md:py-4 lg:py-5 font-inter font-semibold hover:bg-gray-700 transition-colors duration-300 shadow-lg hover:shadow-2xl cursor-pointer text-base sm:text-lg md:text-xl"
+            variants={buttonVariants}
+            whileHover="hover"
+            whileTap="tap"
+          >
             Book a call
-          </button>
+          </motion.button>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

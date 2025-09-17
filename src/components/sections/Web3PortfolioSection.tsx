@@ -8,7 +8,8 @@ export default function Web3PortfolioSection() {
     {
       id: 1,
       title: "Ultra Woman",
-      description: "Modern women's fashion and lifestyle platform with Web3 integration for exclusive NFT collections and community rewards.",
+      description:
+        "Modern women's fashion and lifestyle platform with Web3 integration for exclusive NFT collections and community rewards.",
       image: "/carousel/image-9.png",
       url: "https://ultra-woman2.vercel.app/",
       revenue: "$100k+",
@@ -18,7 +19,8 @@ export default function Web3PortfolioSection() {
     {
       id: 2,
       title: "Meta Frenchies",
-      description: "Premium NFT collection featuring French Bulldog characters with unique traits and community-driven utility features.",
+      description:
+        "Premium NFT collection featuring French Bulldog characters with unique traits and community-driven utility features.",
       image: "/carousel/image-10.png",
       url: "https://meta-frenchies.vercel.app/",
       revenue: "$500k+",
@@ -28,7 +30,8 @@ export default function Web3PortfolioSection() {
     {
       id: 3,
       title: "MMB NFT",
-      description: "Multi-media blockchain NFT marketplace enabling artists to tokenize and trade digital art across multiple chains.",
+      description:
+        "Multi-media blockchain NFT marketplace enabling artists to tokenize and trade digital art across multiple chains.",
       image: "/carousel/image-17.png",
       url: "https://mmb-nft.vercel.app/",
       revenue: "$2M+",
@@ -38,7 +41,8 @@ export default function Web3PortfolioSection() {
     {
       id: 4,
       title: "Goolops",
-      description: "Next.js application for modern web development with Web3 wallet integration and decentralized app features.",
+      description:
+        "Next.js application for modern web development with Web3 wallet integration and decentralized app features.",
       image: "/carousel/image-11.png",
       url: "https://goolops-next.vercel.app/",
       revenue: "$150k+",
@@ -48,7 +52,8 @@ export default function Web3PortfolioSection() {
     {
       id: 5,
       title: "Self Loathing",
-      description: "Interactive platform exploring mental health themes through Web3 technology and community support systems.",
+      description:
+        "Interactive platform exploring mental health themes through Web3 technology and community support systems.",
       image: "/carousel/image-12.png",
       url: "https://self-loathing.vercel.app/",
       revenue: "$200k+",
@@ -58,7 +63,8 @@ export default function Web3PortfolioSection() {
     {
       id: 6,
       title: "Psycho Cats",
-      description: "Unique NFT collection with feline characters featuring dynamic traits and gamified community interactions.",
+      description:
+        "Unique NFT collection with feline characters featuring dynamic traits and gamified community interactions.",
       image: "/carousel/image-13.png",
       url: "https://psycho-cats.vercel.app/",
       revenue: "$300k+",
@@ -68,7 +74,8 @@ export default function Web3PortfolioSection() {
     {
       id: 7,
       title: "Tiger NFT",
-      description: "Exclusive tiger-themed NFT marketplace with premium collections and exclusive community access features.",
+      description:
+        "Exclusive tiger-themed NFT marketplace with premium collections and exclusive community access features.",
       image: "/carousel/image-14.png",
       url: "https://tiger-nft-nine.vercel.app/",
       revenue: "$1M+",
@@ -90,7 +97,8 @@ export default function Web3PortfolioSection() {
           </h2>
           <p className="text-lg sm:text-xl md:text-2xl text-muted font-inter max-w-4xl mx-auto leading-relaxed">
             Delivered over 60+ Web3 projects few of which reached{" "}
-            <span className="text-purple font-semibold">$100k+ to $2M+</span> in revenue upon launch
+            <span className="text-purple font-semibold">$100k+ to $2M+</span> in
+            revenue upon launch
           </p>
         </div>
 
@@ -111,10 +119,10 @@ export default function Web3PortfolioSection() {
                         className="object-cover group-hover:scale-110 transition-transform duration-700"
                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 50vw"
                       />
-                      
+
                       {/* Gradient Overlay */}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                      
+
                       {/* Revenue Badge */}
                       <div className="absolute top-3 right-3 sm:top-6 sm:right-6 bg-gradient-to-r from-green-500 to-green-600 text-white px-2 py-1 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-bold shadow-xl">
                         {project.revenue}
@@ -173,9 +181,10 @@ export default function Web3PortfolioSection() {
             Ready to Launch Your Web3 Project?
           </h3>
           <p className="text-lg sm:text-xl text-muted font-inter mb-8 max-w-2xl mx-auto">
-            Join the founders who&apos;ve already generated millions in revenue with their Web3 projects.
+            Join the founders who&apos;ve already generated millions in revenue
+            with their Web3 projects.
           </p>
-          <button className="bg-gray-800 hover:bg-gray-700 rounded-full text-white px-8 md:px-10 py-4 md:py-6 font-inter font-semibold transition-colors duration-300 shadow-lg hover:shadow-2xl cursor-pointer text-lg md:text-xl">
+          <button className="bg-primary rounded-full text-white px-8 md:px-10 py-4 md:py-6 font-inter font-semibold transition-colors duration-300 shadow-lg hover:shadow-2xl cursor-pointer text-lg md:text-xl">
             Start Your Web3 Project
           </button>
         </div>

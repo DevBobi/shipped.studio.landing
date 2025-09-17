@@ -1,14 +1,17 @@
 "use client";
 
-import { useEffect, useRef, useCallback, useMemo } from "react";
+import { useRef, useCallback, useMemo } from "react";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import Image from "next/image";
 
 export default function OptimizedInfiniteCarousel() {
-  const firstRowRef = useRef<HTMLDivElement>(null);
-  const secondRowRef = useRef<HTMLDivElement>(null);
-  const thirdRowRef = useRef<HTMLDivElement>(null);
-  const lastScrollYRef = useRef(0);
-  const tickingRef = useRef(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  // Use Framer Motion's scroll progress hook
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"],
+  });
 
   // All images combined
   const allImages = useMemo(
@@ -110,7 +113,7 @@ export default function OptimizedInfiniteCarousel() {
   // Create infinite arrays for each row
   const firstRowInfinite = useMemo(() => {
     const result = [];
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < 4; i++) {
       result.push(...firstRowImages);
     }
     return result;
@@ -118,7 +121,7 @@ export default function OptimizedInfiniteCarousel() {
 
   const secondRowInfinite = useMemo(() => {
     const result = [];
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < 4; i++) {
       result.push(...secondRowImages);
     }
     return result;
@@ -126,14 +129,16 @@ export default function OptimizedInfiniteCarousel() {
 
   const thirdRowInfinite = useMemo(() => {
     const result = [];
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < 4; i++) {
       result.push(...thirdRowImages);
     }
     return result;
   }, [thirdRowImages]);
 
-  // Memoize constants - reduced image width for compactness
-  const IMAGE_WIDTH = 220;
+  // Image width constant
+  const IMAGE_WIDTH = 320;
+
+  // Calculate row widths
   const firstRowSetWidth = useMemo(
     () => firstRowImages.length * IMAGE_WIDTH,
     [firstRowImages.length]
@@ -147,71 +152,23 @@ export default function OptimizedInfiniteCarousel() {
     [thirdRowImages.length]
   );
 
-  // Optimized scroll handler using useCallback
-  const handleScroll = useCallback(() => {
-    if (tickingRef.current) return;
+  // Create smooth transform values with springs for better motion feel
+  const firstRowX = useSpring(
+    useTransform(scrollYProgress, [0, 1], [0, -firstRowSetWidth]),
+    { stiffness: 100, damping: 30, mass: 0.8 }
+  );
 
-    tickingRef.current = true;
-    requestAnimationFrame(() => {
-      const scrollY = window.scrollY;
+  const secondRowX = useSpring(
+    useTransform(scrollYProgress, [0, 1], [-secondRowSetWidth, 0]),
+    { stiffness: 100, damping: 30, mass: 0.8 }
+  );
 
-      // Skip minimal scroll changes
-      if (Math.abs(scrollY - lastScrollYRef.current) < 3) {
-        tickingRef.current = false;
-        return;
-      }
+  const thirdRowX = useSpring(
+    useTransform(scrollYProgress, [0, 1], [0, -thirdRowSetWidth * 1.2]),
+    { stiffness: 100, damping: 30, mass: 0.8 }
+  );
 
-      lastScrollYRef.current = scrollY;
-      const windowHeight = window.innerHeight;
-      const documentHeight = document.documentElement.scrollHeight;
-
-      // Calculate scroll progress
-      const maxScroll = documentHeight - windowHeight;
-      if (maxScroll <= 0) {
-        tickingRef.current = false;
-        return;
-      }
-
-      const scrollProgress = scrollY / maxScroll;
-      const loopedProgress = scrollProgress % 1;
-
-      // Batch DOM updates - different widths for each row
-      const translateX1 = loopedProgress * firstRowSetWidth;
-      const translateX2 = loopedProgress * secondRowSetWidth;
-      const translateX3 = loopedProgress * thirdRowSetWidth * 1.5;
-
-      if (firstRowRef.current) {
-        (
-          firstRowRef.current as HTMLDivElement
-        ).style.transform = `translate3d(-${translateX1}px, 0, 0)`;
-      }
-
-      if (secondRowRef.current) {
-        (
-          secondRowRef.current as HTMLDivElement
-        ).style.transform = `translate3d(${translateX2}px, 0, 0)`;
-      }
-
-      if (thirdRowRef.current) {
-        (
-          thirdRowRef.current as HTMLDivElement
-        ).style.transform = `translate3d(-${translateX3}px, 0, 0)`;
-      }
-
-      tickingRef.current = false;
-    });
-  }, [firstRowSetWidth, secondRowSetWidth, thirdRowSetWidth]);
-
-  useEffect(() => {
-    // Use passive listener for better performance
-    window.addEventListener("scroll", handleScroll, { passive: true });
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [handleScroll]);
-
-  // Simplified image component without hover effects
+  // Enhanced image component with motion
   const ImageCard = useCallback(
     ({
       image,
@@ -220,80 +177,81 @@ export default function OptimizedInfiniteCarousel() {
       image: { src: string; title: string; subtitle: string };
       index: number;
     }) => (
-      <div key={`${image.src}-${index}`} className="flex-shrink-0">
+      <motion.div
+        key={`${image.src}-${index}`}
+        className="flex-shrink-0"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{
+          duration: 0.6,
+          delay: (index % 6) * 0.1,
+          ease: [0.25, 0.46, 0.45, 0.94],
+        }}
+        viewport={{ once: true, margin: "-50px" }}
+      >
         <Image
           src={image.src}
           alt={`${image.title} - ${image.subtitle}`}
-          width={288}
-          height={288}
-          className="h-48 w-auto sm:h-56 md:h-64 lg:h-72 object-contain border border-gray-200"
+          width={400}
+          height={400}
+          className="h-64 w-auto sm:h-72 md:h-80 lg:h-96 object-contain border border-gray-200 transition-shadow duration-300 hover:shadow-lg"
           style={{
             borderRadius: "15px",
           }}
           loading="lazy"
           onError={(e) => {
             console.error(`Failed to load image: ${image.src}`);
-            // Fallback to a placeholder or hide the image
-            e.currentTarget.style.display = 'none';
-          }}
-          onLoad={() => {
-            console.log(`Successfully loaded image: ${image.src}`);
+            e.currentTarget.style.display = "none";
           }}
         />
-      </div>
+      </motion.div>
     ),
     []
   );
 
   return (
-    <div className="w-full py-8 sm:py-12 md:py-16 space-y-3 overflow-hidden">
-      {/* First Row - Moves Right */}
-      <div>
-        <div
-          ref={firstRowRef}
-          className="flex gap-3 will-change-transform"
-          style={{
-            width: "max-content",
-            transform: "translate3d(0, 0, 0)", // Initialize hardware acceleration
-          }}
-        >
-          {firstRowInfinite.map((image, index) => (
-            <ImageCard key={`row1-${index}`} image={image} index={index} />
-          ))}
-        </div>
-      </div>
+    <div
+      ref={containerRef}
+      className="w-full py-8 sm:py-12 md:py-16 space-y-3 overflow-hidden"
+    >
+      {/* First Row - Moves Left */}
+      <motion.div
+        className="flex gap-3"
+        style={{
+          x: firstRowX,
+          width: "max-content",
+        }}
+      >
+        {firstRowInfinite.map((image, index) => (
+          <ImageCard key={`row1-${index}`} image={image} index={index} />
+        ))}
+      </motion.div>
 
-      {/* Second Row - Moves Left */}
-      <div className="">
-        <div
-          ref={secondRowRef}
-          className="flex gap-3 will-change-transform"
-          style={{
-            width: "max-content",
-            transform: "translate3d(0, 0, 0)",
-          }}
-        >
-          {secondRowInfinite.map((image, index) => (
-            <ImageCard key={`row2-${index}`} image={image} index={index} />
-          ))}
-        </div>
-      </div>
+      {/* Second Row - Moves Right */}
+      <motion.div
+        className="flex gap-3"
+        style={{
+          x: secondRowX,
+          width: "max-content",
+        }}
+      >
+        {secondRowInfinite.map((image, index) => (
+          <ImageCard key={`row2-${index}`} image={image} index={index} />
+        ))}
+      </motion.div>
 
-      {/* Third Row - Moves Right (Faster) */}
-      <div>
-        <div
-          ref={thirdRowRef}
-          className="flex gap-3 will-change-transform"
-          style={{
-            width: "max-content",
-            transform: "translate3d(0, 0, 0)",
-          }}
-        >
-          {thirdRowInfinite.map((image, index) => (
-            <ImageCard key={`row3-${index}`} image={image} index={index} />
-          ))}
-        </div>
-      </div>
+      {/* Third Row - Moves Left (Faster) */}
+      {/* <motion.div
+        className="flex gap-3"
+        style={{
+          x: thirdRowX,
+          width: "max-content",
+        }}
+      >
+        {thirdRowInfinite.map((image, index) => (
+          <ImageCard key={`row3-${index}`} image={image} index={index} />
+        ))}
+      </motion.div> */}
     </div>
   );
 }

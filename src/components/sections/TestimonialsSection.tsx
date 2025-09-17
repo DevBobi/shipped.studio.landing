@@ -121,7 +121,7 @@ export default function TestimonialsSection() {
 
           {/* Button Section */}
           <div className="text-center mb-8">
-            <button className="bg-gray-900 text-white px-8 py-4 rounded-full font-semibold hover:bg-gray-800 transition-colors text-base">
+            <button className="bg-primary text-white px-8 py-4 rounded-full font-semibold transition-colors text-base">
               Start Your Journey
             </button>
           </div>
@@ -291,7 +291,7 @@ export default function TestimonialsSection() {
               customers.&rdquo;
             </p>
             <div className="mt-8">
-              <button className="bg-gray-900 text-white px-8 py-4 rounded-full font-semibold hover:bg-gray-800 transition-colors text-base">
+              <button className="bg-primary text-white px-8 py-4 rounded-full font-semibold transition-colors text-base">
                 Start Your Journey
               </button>
             </div>

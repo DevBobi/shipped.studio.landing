@@ -47,7 +47,7 @@ export default function Navbar() {
 
           {/* CTA Button and Mobile Nav - Right Column */}
           <div className="flex items-center justify-end gap-2 sm:gap-4">
-            <button className="hidden md:block bg-gray-900 text-white px-6 py-3 rounded-full font-inter font-medium hover:bg-gray-800 transition-colors">
+            <button className="hidden md:block bg-gray-900 text-white px-6 py-3 rounded-full font-inter font-medium transition-colors">
               Book a Call
             </button>
             <div className="md:hidden">
@@ -140,7 +140,7 @@ export default function Navbar() {
 
             {/* CTA Button */}
             <div className="px-6 py-6">
-              <button className="w-full bg-gray-900 text-white px-6 py-4 rounded-full font-inter font-semibold text-lg hover:bg-gray-800 transition-colors">
+              <button className="w-full bg-gray-900 text-white px-6 py-4 rounded-full font-inter font-semibold text-lg transition-colors">
                 Book a Call
               </button>
             </div>

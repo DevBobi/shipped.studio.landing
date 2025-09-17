@@ -1,4 +1,6 @@
+"use client";
 import { FaCheck, FaTimes } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 export default function WhyDifferentSection() {
   const comparisonData = [
@@ -32,252 +34,332 @@ export default function WhyDifferentSection() {
     },
   ];
 
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: [0.25, 0.46, 0.45, 0.94] as any,
+      },
+    },
+  };
+
+  const tableVariants = {
+    hidden: { opacity: 0, scale: 0.95 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 0.8,
+        ease: [0.25, 0.46, 0.45, 0.94] as any,
+      },
+    },
+  };
+
   return (
     <section className="py-24 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+      <div className="max-w-[1440px] mx-auto px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-bold text-primary font-dm-sans mb-6">
+        <motion.div
+          className="text-center mb-20"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={containerVariants}
+        >
+          <motion.h2
+            className="text-4xl md:text-6xl font-bold font-dm-sans mb-6 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent"
+            variants={itemVariants}
+          >
             Why we&apos;re different
-          </h2>
-        </div>
+          </motion.h2>
+          <motion.p
+            className="text-xl text-gray-600 max-w-3xl mx-auto font-inter"
+            variants={itemVariants}
+          >
+            See how we stack up against the alternatives and why top startups
+            choose us
+          </motion.p>
+        </motion.div>
 
         {/* Comparison Table */}
-        <div className="bg-gray-800 rounded-[24px] p-0 overflow-hidden max-w-6xl w-full mx-auto shadow-xl border border-gray-100">
+        <motion.div
+          className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-[32px] p-0 overflow-hidden w-full mx-auto shadow-2xl border border-gray-700 backdrop-blur-sm"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          variants={tableVariants}
+          whileHover={{ scale: 1.01 }}
+          transition={{ duration: 0.3 }}
+        >
           {/* Desktop Table */}
           <div className="hidden md:block">
             {/* Header Row */}
-            <div className="grid grid-cols-5 bg-gray-800">
-              <div className="p-6 text-white font-medium font-dm-sans mt-2">
+            <div className="grid grid-cols-5 bg-gradient-to-r from-gray-800 to-gray-700">
+              <div className="p-8 text-gray-300 font-semibold font-dm-sans mt-2 text-lg flex items-center justify-center">
                 Category
               </div>
-              <div className="bg-gray-300 p-6 mt-2 text-primary font-bold text-center font-dm-sans rounded-t-[50px]">
-                Shipped Studio
+              <div className="bg-gradient-to-br from-blue-100 via-white to-blue-50 p-8 mt-2 text-gray-900 font-bold text-center font-dm-sans rounded-t-[50px] shadow-lg border-2 border-blue-200">
+                <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent text-xl">
+                  🚀 Shipped Studio
+                </span>
               </div>
-              <div className="p-6 text-white font-medium text-center font-dm-sans mt-2">
+              <div className="p-8 text-gray-300 font-semibold text-center font-dm-sans mt-2 text-lg flex items-center justify-center">
                 Freelancer
               </div>
-              <div className="p-6 text-white font-medium text-center font-dm-sans mt-2">
+              <div className="p-8 text-gray-300 font-semibold text-center font-dm-sans mt-2 text-lg flex items-center justify-center">
                 Traditional Agency
               </div>
-              <div className="p-6 text-white font-medium text-center font-dm-sans mt-2">
+              <div className="p-8 text-gray-300 font-semibold text-center font-dm-sans mt-2 text-lg flex items-center justify-center">
                 In-House
               </div>
             </div>
 
             {/* Content Rows */}
             {comparisonData.map((row, index) => (
-              <div
+              <motion.div
                 key={index}
-                className="grid grid-cols-5 border-t border-gray-700"
+                className="grid grid-cols-5 border-t border-gray-600/50 hover:bg-gray-700/30 transition-colors duration-300"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{
+                  duration: 0.6,
+                  delay: index * 0.1,
+                  ease: [0.25, 0.46, 0.45, 0.94],
+                }}
               >
-                <div className="p-6 text-white font-medium font-inter">
+                <div className="p-8 text-gray-200 font-semibold font-inter text-lg">
                   {row.category}
                 </div>
                 <div
-                  className={`bg-gray-300 p-6 flex items-center ${
+                  className={`bg-gradient-to-br from-blue-100 via-white to-blue-50 p-8 flex items-center border-x-2 border-blue-200 ${
                     index === comparisonData.length - 1
                       ? "rounded-b-[50px] mb-2"
                       : ""
                   }`}
                 >
-                  <div className="flex items-center gap-3 font-bold text-primary">
-                    <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
-                      <FaCheck className="w-3 h-3 text-white" />
+                  <div className="flex items-center gap-4 font-bold text-gray-900">
+                    <div className="w-8 h-8 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center flex-shrink-0 shadow-lg">
+                      <FaCheck className="w-4 h-4 text-white" />
                     </div>
-                    <span className="font-inter font-medium">
+                    <span className="font-inter font-semibold text-lg">
                       {row.shippedStudio.text}
                     </span>
                   </div>
                 </div>
                 <div
-                  className={`p-6 flex items-center ${
+                  className={`p-8 flex items-center ${
                     index === comparisonData.length - 1
-                      ? "rounded-b-[64px]"
+                      ? "rounded-b-[32px]"
                       : ""
                   }`}
                 >
-                  <div className="flex items-center gap-3 text-light-gray">
+                  <div className="flex items-center gap-4 text-gray-300">
                     {row.freelancer.has ? (
-                      <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
-                        <FaCheck className="w-3 h-3 text-white" />
+                      <div className="w-8 h-8 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center flex-shrink-0 shadow-md">
+                        <FaCheck className="w-4 h-4 text-white" />
                       </div>
                     ) : (
-                      <div className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0">
-                        <FaTimes className="w-3 h-3 text-white" />
+                      <div className="w-8 h-8 bg-gradient-to-r from-red-500 to-rose-500 rounded-full flex items-center justify-center flex-shrink-0 shadow-md">
+                        <FaTimes className="w-4 h-4 text-white" />
                       </div>
                     )}
-                    <span className="font-inter font-medium">
+                    <span className="font-inter font-medium text-lg">
                       {row.freelancer.text}
                     </span>
                   </div>
                 </div>
                 <div
-                  className={`p-6 flex items-center ${
+                  className={`p-8 flex items-center ${
                     index === comparisonData.length - 1
-                      ? "rounded-b-[64px]"
+                      ? "rounded-b-[32px]"
                       : ""
                   }`}
                 >
-                  <div className="flex items-center gap-3 text-light-gray">
+                  <div className="flex items-center gap-4 text-gray-300">
                     {row.traditionalAgency.has ? (
-                      <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
-                        <FaCheck className="w-3 h-3 text-white" />
+                      <div className="w-8 h-8 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center flex-shrink-0 shadow-md">
+                        <FaCheck className="w-4 h-4 text-white" />
                       </div>
                     ) : (
-                      <div className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0">
-                        <FaTimes className="w-3 h-3 text-white" />
+                      <div className="w-8 h-8 bg-gradient-to-r from-red-500 to-rose-500 rounded-full flex items-center justify-center flex-shrink-0 shadow-md">
+                        <FaTimes className="w-4 h-4 text-white" />
                       </div>
                     )}
-                    <span className="font-inter font-medium">
+                    <span className="font-inter font-medium text-lg">
                       {row.traditionalAgency.text}
                     </span>
                   </div>
                 </div>
                 <div
-                  className={`p-6 flex items-center ${
+                  className={`p-8 flex items-center ${
                     index === comparisonData.length - 1
-                      ? "rounded-b-[64px]"
+                      ? "rounded-b-[32px]"
                       : ""
                   }`}
                 >
-                  <div className="flex items-center gap-3 text-light-gray">
+                  <div className="flex items-center gap-4 text-gray-300">
                     {row.inHouse.has ? (
-                      <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
-                        <FaCheck className="w-3 h-3 text-white" />
+                      <div className="w-8 h-8 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center flex-shrink-0 shadow-md">
+                        <FaCheck className="w-4 h-4 text-white" />
                       </div>
                     ) : (
-                      <div className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0">
-                        <FaTimes className="w-3 h-3 text-white" />
+                      <div className="w-8 h-8 bg-gradient-to-r from-red-500 to-rose-500 rounded-full flex items-center justify-center flex-shrink-0 shadow-md">
+                        <FaTimes className="w-4 h-4 text-white" />
                       </div>
                     )}
-                    <span className="font-inter font-medium">
+                    <span className="font-inter font-medium text-lg">
                       {row.inHouse.text}
                     </span>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
 
           {/* Mobile Table */}
           <div className="md:hidden overflow-x-auto">
-            <div className="min-w-[800px]">
+            <div className="min-w-[900px]">
               {/* Header Row */}
-              <div className="grid grid-cols-5 bg-gray-800">
-                <div className="p-4 text-white font-medium font-dm-sans mt-2 text-sm">
+              <div className="grid grid-cols-5 bg-gradient-to-r from-gray-800 to-gray-700">
+                <div className="p-6 text-gray-300 font-semibold font-dm-sans mt-2">
                   Category
                 </div>
-                <div className="bg-gray-300 p-4 mt-2 text-primary font-bold text-center font-dm-sans rounded-t-[16px] text-sm">
-                  Shipped Studio
+                <div className="bg-gradient-to-br from-blue-100 via-white to-blue-50 p-6 mt-2 text-gray-900 font-bold text-center font-dm-sans rounded-t-[24px] shadow-lg border-2 border-blue-200">
+                  <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                    🚀 Shipped Studio
+                  </span>
                 </div>
-                <div className="p-4 text-white font-medium text-center font-dm-sans mt-2 text-sm">
+                <div className="p-6 text-gray-300 font-semibold text-center font-dm-sans mt-2">
                   Freelancer
                 </div>
-                <div className="p-4 text-white font-medium text-center font-dm-sans mt-2 text-sm">
+                <div className="p-6 text-gray-300 font-semibold text-center font-dm-sans mt-2">
                   Traditional Agency
                 </div>
-                <div className="p-4 text-white font-medium text-center font-dm-sans mt-2 text-sm">
+                <div className="p-6 text-gray-300 font-semibold text-center font-dm-sans mt-2">
                   In-House
                 </div>
               </div>
 
               {/* Content Rows */}
               {comparisonData.map((row, index) => (
-                <div
+                <motion.div
                   key={index}
-                  className="grid grid-cols-5 border-t border-gray-700"
+                  className="grid grid-cols-5 border-t border-gray-600/50 hover:bg-gray-700/30 transition-colors duration-300"
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 0.6,
+                    delay: index * 0.1,
+                    ease: [0.25, 0.46, 0.45, 0.94],
+                  }}
                 >
-                  <div className="p-4 text-white font-medium font-inter text-sm">
+                  <div className="p-6 text-gray-200 font-semibold font-inter">
                     {row.category}
                   </div>
                   <div
-                    className={`bg-gray-300 p-4 flex items-center ${
+                    className={`bg-gradient-to-br from-blue-100 via-white to-blue-50 p-6 flex items-center border-x-2 border-blue-200 ${
                       index === comparisonData.length - 1
-                        ? "rounded-b-[16px] mb-2"
+                        ? "rounded-b-[24px] mb-2"
                         : ""
                     }`}
                   >
-                    <div className="flex items-center gap-2 font-bold text-primary">
-                      <div className="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
-                        <FaCheck className="w-2.5 h-2.5 text-white" />
+                    <div className="flex items-center gap-3 font-bold text-gray-900">
+                      <div className="w-6 h-6 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center flex-shrink-0 shadow-lg">
+                        <FaCheck className="w-3 h-3 text-white" />
                       </div>
-                      <span className="font-inter font-medium text-sm">
+                      <span className="font-inter font-semibold">
                         {row.shippedStudio.text}
                       </span>
                     </div>
                   </div>
                   <div
-                    className={`p-4 flex items-center ${
+                    className={`p-6 flex items-center ${
                       index === comparisonData.length - 1
-                        ? "rounded-b-[16px]"
+                        ? "rounded-b-[24px]"
                         : ""
                     }`}
                   >
-                    <div className="flex items-center gap-2 text-light-gray">
+                    <div className="flex items-center gap-3 text-gray-300">
                       {row.freelancer.has ? (
-                        <div className="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
-                          <FaCheck className="w-2.5 h-2.5 text-white" />
+                        <div className="w-6 h-6 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center flex-shrink-0 shadow-md">
+                          <FaCheck className="w-3 h-3 text-white" />
                         </div>
                       ) : (
-                        <div className="w-5 h-5 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0">
-                          <FaTimes className="w-2.5 h-2.5 text-white" />
+                        <div className="w-6 h-6 bg-gradient-to-r from-red-500 to-rose-500 rounded-full flex items-center justify-center flex-shrink-0 shadow-md">
+                          <FaTimes className="w-3 h-3 text-white" />
                         </div>
                       )}
-                      <span className="font-inter font-medium text-sm">
+                      <span className="font-inter font-medium">
                         {row.freelancer.text}
                       </span>
                     </div>
                   </div>
                   <div
-                    className={`p-4 flex items-center ${
+                    className={`p-6 flex items-center ${
                       index === comparisonData.length - 1
-                        ? "rounded-b-[16px]"
+                        ? "rounded-b-[24px]"
                         : ""
                     }`}
                   >
-                    <div className="flex items-center gap-2 text-light-gray">
+                    <div className="flex items-center gap-3 text-gray-300">
                       {row.traditionalAgency.has ? (
-                        <div className="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
-                          <FaCheck className="w-2.5 h-2.5 text-white" />
+                        <div className="w-6 h-6 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center flex-shrink-0 shadow-md">
+                          <FaCheck className="w-3 h-3 text-white" />
                         </div>
                       ) : (
-                        <div className="w-5 h-5 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0">
-                          <FaTimes className="w-2.5 h-2.5 text-white" />
+                        <div className="w-6 h-6 bg-gradient-to-r from-red-500 to-rose-500 rounded-full flex items-center justify-center flex-shrink-0 shadow-md">
+                          <FaTimes className="w-3 h-3 text-white" />
                         </div>
                       )}
-                      <span className="font-inter font-medium text-sm">
+                      <span className="font-inter font-medium">
                         {row.traditionalAgency.text}
                       </span>
                     </div>
                   </div>
                   <div
-                    className={`p-4 flex items-center ${
+                    className={`p-6 flex items-center ${
                       index === comparisonData.length - 1
-                        ? "rounded-b-[16px]"
+                        ? "rounded-b-[24px]"
                         : ""
                     }`}
                   >
-                    <div className="flex items-center gap-2 text-light-gray">
+                    <div className="flex items-center gap-3 text-gray-300">
                       {row.inHouse.has ? (
-                        <div className="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
-                          <FaCheck className="w-2.5 h-2.5 text-white" />
+                        <div className="w-6 h-6 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center flex-shrink-0 shadow-md">
+                          <FaCheck className="w-3 h-3 text-white" />
                         </div>
                       ) : (
-                        <div className="w-5 h-5 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0">
-                          <FaTimes className="w-2.5 h-2.5 text-white" />
+                        <div className="w-6 h-6 bg-gradient-to-r from-red-500 to-rose-500 rounded-full flex items-center justify-center flex-shrink-0 shadow-md">
+                          <FaTimes className="w-3 h-3 text-white" />
                         </div>
                       )}
-                      <span className="font-inter font-medium text-sm">
+                      <span className="font-inter font-medium">
                         {row.inHouse.text}
                       </span>
                     </div>
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

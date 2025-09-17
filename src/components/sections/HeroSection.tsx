@@ -32,19 +32,20 @@ export default function HeroSection() {
             <span className="text-primary">Your Idea, Designed And</span>
             <br />
             <span className="text-primary">Built In </span>{" "}
-            <span className="text-white bg-gray-900 px-2 sm:px-4 py-1 sm:py-2 rounded-lg text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">
-            Just{" "}21{" "}Days.
+            <span className="text-white bg-primary px-2 sm:px-4 py-1 sm:py-2 rounded-lg text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">
+              Just 21 Days.
             </span>
           </h1>
 
           {/* Subheading */}
           <p className="text-lg sm:text-xl md:text-2xl text-muted font-inter max-w-4xl mx-auto mb-12 sm:mb-16 leading-relaxed px-4 sm:px-0">
-          We Design and Build Your SaaS Idea In 2-3 Weeks With No Surprises. We Build Everything From AI SaaS To Mobile Apps
+            We Design and Build Your SaaS Idea In 2-3 Weeks With No Surprises.
+            We Build Everything From AI SaaS To Mobile Apps
           </p>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mb-16 sm:mb-20 px-4 sm:px-0">
-            <button className="w-full sm:w-auto bg-gray-900 text-white px-8 py-4 rounded-full font-inter font-semibold text-lg hover:bg-gray-800 transition-all duration-300 hover:scale-105 flex items-center justify-center gap-3 shadow-xl hover:shadow-2xl cursor-pointer">
+            <button className="w-full sm:w-auto bg-primary text-white px-8 py-4 rounded-full font-inter font-semibold text-lg transition-all duration-300 hover:scale-105 flex items-center justify-center gap-3 shadow-xl hover:shadow-2xl cursor-pointer">
               Book a Call
               <FaArrowRight className="w-5 h-5" />
             </button>

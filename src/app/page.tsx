@@ -33,8 +33,8 @@ export default function Home() {
         <ProcessSection />
         <PricingSection />
         <OurWorkSection />
-        <Web3PortfolioSection />
-        <TestimonialsSection />
+        {/* <Web3PortfolioSection /> */}
+        {/* <TestimonialsSection /> */}
         <TeamSection />
         <FAQSection />
         <CTASection />
