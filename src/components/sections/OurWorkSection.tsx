@@ -36,14 +36,14 @@ export default function OurWorkSection() {
       title: "Aura Maxxing",
       description:
         "iOS app for face analysis and dating optimization. Features conversation analysis, masculinity scoring, and personalized recommendations to improve dating success.",
-      image: "/carousel/image-4.png",
+      image: "/carousel/image-5.png",
     },
     {
       id: 5,
       title: "Content Wizard",
       description:
         "A curated collection of open-source boilerplates and starter kits for building modern scalable applications.",
-      image: "/carousel/image-5.png",
+      image: "/carousel/image-6.png",
     },
     {
       id: 6,
@@ -57,14 +57,14 @@ export default function OurWorkSection() {
       title: "Re-engage",
       description:
         "An AI content repurposing tool to transform YouTube videos, articles, & newsletters in LinkedIn and X posts.",
-      image: "/carousel/image-7.jpg",
+      image: "/carousel/image-13.png",
     },
     {
       id: 8,
       title: "Crunkspot",
       description:
         "A Web3 marketplace that enables artists to tokenize and sell their music as digital assets on Polygon chain.",
-      image: "/carousel/image-8.jpg",
+      image: "/carousel/image-14.png",
     },
   ];
 

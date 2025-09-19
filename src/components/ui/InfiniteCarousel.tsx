@@ -17,17 +17,17 @@ export default function OptimizedInfiniteCarousel() {
   const allImages = useMemo(
     () => [
       {
-        src: "/carousel/image-1.jpg",
+        src: "/carousel/image-1.png",
         title: "Test Whiz",
         subtitle: "All-in-one AI platform for students.",
       },
       {
-        src: "/carousel/image-2.jpg",
+        src: "/carousel/image-2.png",
         title: "Krillion AI",
         subtitle: "AI ad maker for quick, quality ads.",
       },
       {
-        src: "/carousel/image-3.jpg",
+        src: "/carousel/image-3.png",
         title: "Find me leads",
         subtitle: "AI bot for finding leads on Reddit.",
       },
@@ -42,17 +42,17 @@ export default function OptimizedInfiniteCarousel() {
         subtitle: "Curated open-source boilerplates.",
       },
       {
-        src: "/carousel/image-6.jpg",
+        src: "/carousel/image-6.png",
         title: "Opensource boilerplates",
         subtitle: "Starter kits for modern apps.",
       },
       {
-        src: "/carousel/image-7.jpg",
+        src: "/carousel/image-7.png",
         title: "Re-engage",
         subtitle: "AI tool to repurpose content for social.",
       },
       {
-        src: "/carousel/image-8.jpg",
+        src: "/carousel/image-8.png",
         title: "Crunkspot",
         subtitle: "Web3 music marketplace for artists.",
       },
@@ -83,24 +83,9 @@ export default function OptimizedInfiniteCarousel() {
       },
       {
         src: "/carousel/image-14.png",
-        title: "Tiger NFT",
-        subtitle: "Exclusive tiger-themed NFT marketplace.",
-      },
-      {
-        src: "/carousel/image-15.png",
-        title: "WL Safehouse",
-        subtitle: "Whitelist management for NFT communities.",
-      },
-      {
-        src: "/carousel/image-16.png",
-        title: "Fiverr Project",
-        subtitle: "Professional freelance services platform.",
-      },
-      {
-        src: "/carousel/image-17.png",
-        title: "MMB NFT",
-        subtitle: "Multi-media blockchain NFT collection.",
-      },
+        title: "Additional Project",
+        subtitle: "Another amazing project showcase.",
+      }
     ],
     []
   );
