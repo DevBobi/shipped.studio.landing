@@ -32,7 +32,7 @@ export default function Navbar() {
               How it works
             </Link>
             <Link
-              href="/#pricing-section"
+              href="/#pricing"
               className="text-gray-700 hover:text-gray-900 font-inter transition-colors"
             >
               Pricing

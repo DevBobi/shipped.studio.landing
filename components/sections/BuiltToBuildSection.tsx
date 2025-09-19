@@ -151,7 +151,10 @@ export default function BuiltToBuildSection() {
   };
 
   return (
-    <section className="py-12 sm:py-16 md:py-20 lg:py-24 relative overflow-hidden">
+    <section
+      id="services"
+      className="py-12 sm:py-16 md:py-20 lg:py-24 relative overflow-hidden"
+    >
       <motion.div
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"
         variants={containerVariants}

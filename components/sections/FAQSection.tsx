@@ -39,7 +39,7 @@ export default function FAQSection() {
 
   return (
     <section
-      id="faq-section"
+      id="faq"
       className="py-12 sm:py-16 md:py-20 lg:py-24 relative overflow-hidden"
     >
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

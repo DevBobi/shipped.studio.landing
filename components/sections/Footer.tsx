@@ -1,6 +1,7 @@
+import Link from "next/link";
+
 export default function Footer() {
   const navigationLinks = [
-    { name: "MVP Calculator", href: "#mvp-calculator" },
     { name: "Why Shipped Studio", href: "#why-shipped-studio" },
     { name: "Services", href: "#services" },
     { name: "Pricing", href: "#pricing" },
@@ -24,13 +25,13 @@ export default function Footer() {
         {/* Navigation Links */}
         <nav className="flex flex-wrap justify-center gap-8 mb-12">
           {navigationLinks.map((link, index) => (
-            <a
+            <Link
               key={index}
               href={link.href}
               className="text-secondary hover:text-purple font-inter transition-colors"
             >
               {link.name}
-            </a>
+            </Link>
           ))}
         </nav>
 

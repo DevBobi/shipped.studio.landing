@@ -15,7 +15,7 @@ export default function OurWorkSection() {
       title: "Testwhiz",
       description:
         "The all in one AI platform for students. Feature include AI Solver, Chrome Extension, Quiz, Flash Card, Notes, Worksheet, AI Chat, PDF Chat.",
-      image: "/carousel/image-1.jpg",
+      image: "/carousel/image-1.png",
     },
     {
       id: 2,
