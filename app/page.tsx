@@ -1,15 +1,15 @@
-import BuiltToBuildSection from "../components/sections/BuiltToBuildSection";
-import CTASection from "../components/sections/CTASection";
-import FAQSection from "../components/sections/FAQSection";
-import Footer from "../components/sections/Footer";
-import HeroSection from "../components/sections/HeroSection";
-import OurWorkSection from "../components/sections/OurWorkSection";
-import PricingSection from "../components/sections/PricingSection";
-import ProcessSection from "../components/sections/ProcessSection";
-import TeamSection from "../components/sections/TeamSection";
-import TestimonialsSection from "../components/sections/TestimonialsSection";
-import Web3PortfolioSection from "../components/sections/Web3PortfolioSection";
-import WhyDifferentSection from "../components/sections/WhyDifferentSection";
+import BuiltToBuildSection from "../components/sections/built-to-build-section";
+import CTASection from "../components/sections/cta-section";
+import FAQSection from "../components/sections/faq-section";
+import Footer from "../components/sections/footer";
+import HeroSection from "../components/sections/hero-section";
+import OurWorkSection from "../components/sections/our-work-section";
+import PricingSection from "../components/sections/pricing-section";
+import ProcessSection from "../components/sections/process-section";
+import TeamSection from "../components/sections/team-section";
+import TestimonialsSection from "../components/sections/testimonials-section";
+import Web3PortfolioSection from "../components/sections/web3-portfolio-section";
+import WhyDifferentSection from "../components/sections/why-different-section";
 
 export default function Home() {
   return (

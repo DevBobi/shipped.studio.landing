@@ -1,8 +1,8 @@
 "use client";
 
 import { FaArrowRight } from "react-icons/fa";
-import InfiniteCarousel from "../ui/InfiniteCarousel";
-import Navbar from "../ui/Navbar";
+import InfiniteCarousel from "../ui/Infinite-carousel";
+import Navbar from "../ui/navbar";
 import Image from "next/image";
 import Link from "next/link";
 
