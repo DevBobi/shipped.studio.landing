@@ -22,14 +22,14 @@ export default function OurWorkSection() {
       title: "Krillion AI",
       description:
         "AI-powered ad creation platform that generates high-converting ads and creatives in under 60 seconds. Used by over 1100 companies for revenue-generating marketing content.",
-      image: "/carousel/image-2.jpg",
+      image: "/carousel/image-1.png",
     },
     {
       id: 3,
       title: "Find me leads",
       description:
         "A lead generation bot that monitors subreddits and uses AI to find potential leads based on custom keywords.",
-      image: "/carousel/image-3.jpg",
+      image: "/carousel/image-8.jpg",
     },
     {
       id: 4,
@@ -50,7 +50,7 @@ export default function OurWorkSection() {
       title: "Open-source Boilerplates",
       description:
         "A curated list of open source boilerplates and starter kits for building modern applications. From web development with React & Next.js to mobile apps with React Native, Flutter, and native platforms.",
-      image: "/carousel/image-6.jpg",
+      image: "/carousel/image-15.webp",
     },
     {
       id: 7,
