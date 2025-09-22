@@ -29,7 +29,7 @@ export default function OurWorkSection() {
       title: "Find me leads",
       description:
         "A lead generation bot that monitors subreddits and uses AI to find potential leads based on custom keywords.",
-      image: "/carousel/image-8.jpg",
+      image: "/carousel/image-8.png",
     },
     {
       id: 4,
