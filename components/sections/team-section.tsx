@@ -17,7 +17,7 @@ export default function TeamSection() {
     {
       name: "Bobi",
       role: "SE | UI/UX Designer",
-      image: "/teams/bobi.png",
+      image: "/teams/bobi.jpg",
     },
   ];
 
