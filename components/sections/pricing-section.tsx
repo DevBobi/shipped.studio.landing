@@ -20,7 +20,7 @@ export default function PricingSection() {
     },
     {
       name: "MVP+ Landing Page",
-      price: "$2,799",
+      price: "$2,999",
       description:
         "From idea to MVP in days. Ready to impress investors and early adopters.",
       features: [

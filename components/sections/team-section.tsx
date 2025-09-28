@@ -1,23 +1,30 @@
 import { FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function TeamSection() {
   const teamMembers = [
     {
       name: "Sadek Irfan",
       role: "Fractional CTO",
-      image: "/teams/sadek.png",
+      image: "/teams/sadek.jpg",
+      x: "https://x.com/sadekirfan",
+      linkedin: "https://www.linkedin.com/in/sadek-irfan-611571196/",
     },
     {
       name: "Jay",
       role: "Fractional CMO & Product Manager",
       image: "/teams/rifat.png",
+      x: "https://x.com/jayganguly",
+      linkedin: "https://www.linkedin.com/in/jayganguly/",
     },
     {
       name: "Bobi",
       role: "SE | UI/UX Designer",
-      image: "/teams/bobi.jpg",
+      image: "/teams/bobi.png",
+      x: "",
+      linkedin: "",
     },
   ];
 
@@ -53,22 +60,28 @@ export default function TeamSection() {
                 <h3 className="text-xl font-bold text-white font-dm-sans mb-2">
                   {member.name}
                 </h3>
-                <p className="text-light-gray font-inter mb-4">{member.role}</p>
+                <p className="text-light-gray text-sm font-inter mb-4">
+                  {member.role}
+                </p>
 
                 {/* Social Links */}
                 <div className="flex items-center gap-1">
-                  <a
-                    href="#"
-                    className="w-8 h-8 rounded-full flex items-center justify-center hover:bg-black hover:scale-110 transition-all duration-300 group"
-                  >
-                    <FaXTwitter className="w-4 h-4 text-white group-hover:text-white transition-colors duration-300" />
-                  </a>
-                  <a
-                    href="#"
-                    className="w-8 h-8 rounded-full flex items-center justify-center hover:bg-blue-600 hover:scale-110 transition-all duration-300 group"
-                  >
-                    <FaLinkedin className="w-4 h-4 text-blue group-hover:text-white transition-colors duration-300" />
-                  </a>
+                  {member.x && (
+                    <Link
+                      href={member.x || "#"}
+                      className="w-8 h-8 rounded-full flex items-center justify-center hover:bg-blue-600 hover:scale-110 transition-all duration-300 group"
+                    >
+                      <FaXTwitter className="w-4 h-4 text-white group-hover:text-white transition-colors duration-300" />
+                    </Link>
+                  )}
+                  {member.linkedin && (
+                    <Link
+                      href={member.linkedin || "#"}
+                      className="w-8 h-8 rounded-full flex items-center justify-center hover:bg-blue-600 hover:scale-110 transition-all duration-300 group"
+                    >
+                      <FaLinkedin className="w-4 h-4 text-blue group-hover:text-white transition-colors duration-300" />
+                    </Link>
+                  )}
                 </div>
               </div>
             </div>
